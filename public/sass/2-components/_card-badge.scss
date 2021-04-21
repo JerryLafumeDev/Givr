@@ -1,0 +1,43 @@
+
+
+
+
+/*=====================================
+        CARD BADGE COMPONENT STYLE
+======================================*/
+.sale {
+    background: var(--sale);
+}
+
+.rent {
+    background: var(--rent);
+}
+
+.booking {
+    background: var(--booking);
+}
+
+// FLAT BADGE
+.flat-badge {
+    color: var(--white);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+}
+
+// CROSS BADGE
+.cross-badge {
+    width: 25px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 30px;
+    color: var(--white);
+    text-align: center;
+    background: var(--primary);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    clip-path: polygon(0 0, 53% 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+}

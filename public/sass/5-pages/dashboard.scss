@@ -1,0 +1,82 @@
+
+
+
+// MIXINS
+@import "../1-helpers/_mixin.scss";
+
+// COMPONENTS
+@import "../2-components/_pagination.scss";
+
+// ELEMENTS
+@import "../3-elements/_account-card.scss";
+@import "../3-elements/_review-list.scss";
+
+// LAYOUTS
+@import "../4-layouts/_single-banner.scss";
+@import "../4-layouts/_dash-header.scss";
+
+
+/*=====================================
+            DASHBOARD PAGE STYLE
+======================================*/
+body {
+    background: #f2f2f4;
+}
+
+.dashboard-part {
+    padding: 50px 0px 70px;
+}
+
+// DASHBOARD REVIEW WIDGET
+.dash-review-widget {
+    @include flex__center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    h4 {
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    .custom-select {
+        width: 160px;
+        border: none;
+        font-weight: 500;
+        border-radius: 0px;
+        border-bottom: 2px solid var(--primary);
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+// REVIEW LIST 
+.review-list {
+    margin-bottom: 30px;
+}
+
+
+// For responsive style
+@media (max-width: 575px) {
+    .dash-review-widget {
+        flex-direction: column;
+
+        h4 {
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .dashboard-part {
+        padding: 50px 0px 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .dashboard-part {
+        padding: 50px 0px 50px;
+    }
+}

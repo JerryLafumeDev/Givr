@@ -1,0 +1,55 @@
+
+
+
+/*=====================================
+            ALL BUTTON STYLE
+======================================*/
+.btn {
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    border: 2px solid;
+    padding: 14px 32px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: var(--btn-radius);
+    text-shadow: var(--primary-tshadow);
+    // box-shadow: var(--primary-bshadow);
+    @include cursor__transition;
+
+    &:focus {
+        box-shadow: none !important;
+    }
+
+    span {
+        margin-left: 8px;
+    }
+
+    i {
+        margin-top: -1px;
+    }
+}
+
+.btn-inline {
+    color: var(--white);
+    background: var(--primary);
+    border-color: var(--primary);
+
+    &:hover {
+        color: var(--white);
+        background: var(--primary-hover);
+        border-color: var(--primary-hover);
+    }
+}
+
+.btn-outline {
+    color: var(--primary);
+    background: var(--white);
+    border-color: var(--primary);
+
+    &:hover {
+        color: var(--white);
+        background: var(--primary-hover);
+        border-color: var(--primary-hover);
+    }
+}

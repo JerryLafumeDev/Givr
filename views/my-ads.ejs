@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--=====================================
+                    META-TAG PART START
+        =======================================-->
+        <!-- REQUIRE META -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- AUTHOR META -->
+        <meta name="author" content="Mironcoder">
+        <meta name="email" content="mironcoder@gmail.com">
+        <meta name="profile" content="https://themeforest.net/user/mironcoder">
+
+        <!-- TEMPLATE META -->
+        <meta name="name" content="Classicads">
+        <meta name="type" content="Classified Advertising">
+        <meta name="title" content="Classicads - Classified Ads HTML Template">
+        <meta name="keywords" content="classicads, classified, ads, classified ads, listing, business, directory, jobs, marketing, portal, advertising, local, posting, ad listing, ad posting,">
+        <!--=====================================
+                    META-TAG PART END
+        =======================================-->
+
+        <!-- FOR WEBPAGE TITLE -->
+        <title>Classicads - My Ads</title>
+
+        <!--=====================================
+                    CSS LINK PART START
+        =======================================-->
+        <!-- FOR PAGE TITLE ICON -->
+        <link rel="icon" href="images/favicon.png">
+
+        <!-- FOR FONTAWESOME -->
+        <link rel="stylesheet" href="fonts/font-awesome/fontawesome.css">
+
+        <!-- FOR PRICE RANGE -->
+        <link rel="stylesheet" href="css/vendor/jquery-ui.min.css">
+
+        <!-- FOR BOOTSTRAP -->
+        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+
+        <!-- FOR COMMON STYLE -->
+        <link rel="stylesheet" href="css/custom/main.css">
+
+        <!-- FOR MY ADS PAGE STYLE -->
+        <link rel="stylesheet" href="css/custom/my-ads.css">
+        <!--=====================================
+                    CSS LINK PART END
+        =======================================-->
+    </head>
+    <body>
+        <!--=====================================
+                    HEADER PART START
+        =======================================-->
+        <header class="header-part">
+            <div class="container">
+                <div class="header-content">
+
+                    <div class="header-left">
+                        <ul class="header-widget">
+                            <li >
+                                <button type="button" class="header-menu">
+                                    <i class="fas fa-align-left"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <a href="index.html" class="header-logo">
+                                    <img src="images/logo.png" alt="logo">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="user-form.html" class="header-user">
+                                    <i class="fas fa-user"></i>
+                                    <span>Login</span>
+                                </a>
+                            </li>
+                            <li>
+                                <button type="button" class="header-src">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form class="header-search">
+                        <div class="header-main-search">
+                            <button type="submit" class="header-search-btn"><i class="fas fa-search"></i></button>
+                            <input type="text" class="form-control" placeholder="Search, Whatever you needs...">
+                            <button type="button" class="header-option-btn tooltip">
+                                <i class="fas fa-sliders-h"></i>
+                                <span class="tooltext left">FilterOption</span>
+                            </button>
+                        </div>
+                        <div class="header-search-option">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="City">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="State">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Category">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" placeholder="Price">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-btn">
+                                        <button type="submit" class="btn btn-inline">
+                                            <i class="fas fa-search"></i>
+                                            <span>Search Here</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="header-right">
+                        <ul class="header-widget">
+                            <li>
+                                <button class="header-favourite">
+                                    <i class="fas fa-heart"></i>
+                                    <sup>0</sup>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="header-notify">
+                                    <i class="fas fa-bell"></i>
+                                    <sup>0</sup>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="header-message">
+                                    <i class="fas fa-envelope"></i>
+                                    <sup>0</sup>
+                                </button>
+                            </li>
+                        </ul>
+                        <a href="ad-post.html" class="btn btn-inline">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>post your ad</span>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+        <!--=====================================
+                    HEADER PART END
+        =======================================-->
+
+
+        <!--=====================================
+                    SIDEBAR PART START
+        =======================================-->
+        <div class="sidebar-part">
+            <div class="sidebar-body">
+                <div class="sidebar-header">
+                    <a href="index.html" class="sidebar-logo"><img src="images/logo.png" alt="logo"></a>
+                    <button class="sidebar-cross"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="sidebar-content">
+                    <div class="sidebar-profile">
+                        <a href="#" class="sidebar-avatar"><img src="images/avatar/01.jpg" alt="avatar"></a>
+                        <h4><a href="#" class="sidebar-name">Jackon Honson</a></h4>
+                        <a href="ad-post.html" class="btn btn-inline sidebar-btn">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>post your ad</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul class="nav nav-tabs">
+                            <li><a href="#main-menu" class="nav-link active" data-toggle="tab">Main Menu</a></li>
+                            <li><a href="#author-menu" class="nav-link" data-toggle="tab">Author Menu</a></li>
+                        </ul>
+
+                        <div class="tab-pane active" id="main-menu">
+                            <ul class="navbar-list">
+                                <li class="navbar-item"><a class="navbar-link" href="index.html">Home</a></li>
+                                <li class="navbar-item navbar-dropdown">
+                                    <a class="navbar-link" href="#">
+                                        <span>Categories</span>
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                    <ul class="dropdown-list">
+                                        <li><a class="dropdown-link" href="category-list.html">category list</a></li>
+                                        <li><a class="dropdown-link" href="category-details.html">category details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="navbar-item navbar-dropdown">
+                                    <a class="navbar-link" href="#">
+                                        <span>Advertise List</span>
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                    <ul class="dropdown-list">
+                                        <li><a class="dropdown-link" href="grid-list.html">grid list</a></li>
+                                        <li><a class="dropdown-link" href="leftbar-list.html">leftbar list</a></li>
+                                        <li><a class="dropdown-link" href="rightbar-list.html">rightbar list</a></li>
+                                    </ul>
+                                </li>
+                                <li class="navbar-item navbar-dropdown">
+                                    <a class="navbar-link" href="#">
+                                        <span>Advertise details</span>
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                    <ul class="dropdown-list">
+                                        <li><a class="dropdown-link" href="grid-details.html">grid details</a></li>
+                                        <li><a class="dropdown-link" href="leftbar-details.html">leftbar details</a></li>
+                                        <li><a class="dropdown-link" href="rightbar-details.html">rightbar details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="navbar-item navbar-dropdown">
+                                    <a class="navbar-link" href="#">
+                                        <span>Pages</span>
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                    <ul class="dropdown-list">
+                                        <li><a class="dropdown-link" href="about.html">About Us</a></li>
+                                        <li><a class="dropdown-link" href="compare.html">Ad Compare</a></li>
+                                        <li><a class="dropdown-link" href="cities.html">Ad by Cities</a></li>
+                                        <li><a class="dropdown-link" href="price.html">Pricing Plan</a></li>
+                                        <li><a class="dropdown-link" href="user-form.html">User Form</a></li>
+                                        <li><a class="dropdown-link" href="404.html">404</a></li>
+                                    </ul>
+                                </li>
+                                <li class="navbar-item navbar-dropdown">
+                                    <a class="navbar-link" href="#">
+                                        <span>blogs</span>
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                    <ul class="dropdown-list">
+                                        <li><a class="dropdown-link" href="blog-list.html">Blog list</a></li>
+                                        <li><a class="dropdown-link" href="blog-details.html">blog details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="navbar-item"><a class="navbar-link" href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-pane" id="author-menu">
+                            <ul class="navbar-list">
+                                <li class="navbar-item"><a class="navbar-link" href="dashboard.html">Dashboard</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="profile.html">Profile</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="ad-post.html">Ad Post</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="my-ads.html">My Ads</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="setting.html">Settings</a></li>
+                                <li class="navbar-item navbar-dropdown">
+                                    <a class="navbar-link" href="bookmark.html">
+                                        <span>bookmark</span>
+                                        <span>0</span>
+                                    </a>
+                                </li>
+                                <li class="navbar-item navbar-dropdown">
+                                    <a class="navbar-link" href="#">
+                                        <span>Message</span>
+                                        <span>0</span>
+                                    </a>
+                                </li>
+                                <li class="navbar-item navbar-dropdown">
+                                    <a class="navbar-link" href="#">
+                                        <span>Notification</span>
+                                        <span>0</span>
+                                    </a>
+                                </li>
+                                <li class="navbar-item"><a class="navbar-link" href="user-form.html">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-footer">
+                        <p>All Rights Reserved By <a href="#">Classicads</a></p>
+                        <p>Developed By <a href="https://themeforest.net/user/mironcoder">Mironcoder</a></p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!--=====================================
+                    SIDEBAR PART END
+        =======================================-->
+
+
+        <!--=====================================
+                    BTMBAR PART START
+        =======================================-->
+        <div class="btmbar-part">
+            <div class="container">
+                <ul class="btmbar-widget">
+                    <li>
+                        <a href="user-form.html">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-star"></i>
+                            <sup>0</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="plus-btn" href="ad-post.html">
+                            <i class="fas fa-plus"></i>
+                            <span>Ad Your Post</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-bell"></i>
+                            <sup>0</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i>
+                            <sup>0</sup>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--=====================================
+                    BTMBAR PART END
+        =======================================-->
+
+
+        <!--=====================================
+                  SINGLE BANNER PART START
+        =======================================-->
+        <section class="single-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="single-content">
+                            <h2>my ads</h2>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">my ads</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                  SINGLE BANNER PART END
+        =======================================-->
+
+
+        <!--=====================================
+                DASHBOARD HEADER PART START
+        =======================================-->
+        <section class="dash-header-part">
+            <div class="container">
+                <div class="dash-header-card">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="dash-header-left">
+                                <div class="dash-avatar">
+                                    <a href="#"><img src="images/avatar/01.jpg" alt="avatar"></a>
+                                </div>
+                                <div class="dash-intro">
+                                    <h4><a href="#">gackon Honson</a></h4>
+                                    <h5>new seller</h5>
+                                    <ul class="dash-meta">
+                                        <li>
+                                            <i class="fas fa-phone-alt"></i>
+                                            <span>(123) 000-1234</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-envelope"></i>
+                                            <span>gackon@gmail.com</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Los Angeles, West America</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="dash-header-right">
+                                <div class="dash-focus dash-list">
+                                    <h2>2433</h2>
+                                    <p>listing ads</p>
+                                </div>
+                                <div class="dash-focus dash-book">
+                                    <h2>2433</h2>
+                                    <p>bookmark ads</p>
+                                </div>
+                                <div class="dash-focus dash-rev">
+                                    <h2>2433</h2>
+                                    <p>total review</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="dash-header-alert alert fade show">
+                                <p>From your account dashboard. you can easily check & view your recent orders, manage your shipping and billing addresses and Edit your password and account details.</p>
+                                <button data-dismiss="alert"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="dash-menu-list">
+                                <ul>
+                                    <li><a href="dashboard.html">dashboard</a></li>
+                                    <li><a href="profile.html">Profile</a></li>
+                                    <li><a href="ad-post.html">ad post</a></li>
+                                    <li><a class="active" href="my-ads.html">my ads</a></li>
+                                    <li><a href="setting.html">settings</a></li>
+                                    <li><a href="bookmark.html">bookmarks</a></li>
+                                    <li><a href="#">message</a></li>
+                                    <li><a href="#">notification</a></li>
+                                    <li><a href="user-form.html">logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                DASHBOARD HEADER PART END
+        =======================================-->
+
+
+        <!--=====================================
+                    MY ADS PART START
+        =======================================-->
+        <section class="myads-part">
+            <div class="container">
+
+                <!-- PRODUCT TOP FILTER -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="product-filter">
+                            <div class="product-page-number">
+                                <p>Showing 1–9 of 130 results</p>
+                            </div>
+                            <select class="product-short-select custom-select">
+                                <option selected>Short by Best Sell</option>
+                                <option value="1">Short by New Item</option>
+                                <option value="2">Short by Popularity</option>
+                                <option value="3">Short by Average review</option>
+                            </select>
+                            <ul class="product-card-type">
+                                <li class="grid-verti active"><i class="fas fa-grip-vertical"></i></li>
+                                <li class="grid-hori"><i class="fas fa-grip-horizontal"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT CONTENT BODY -->
+                <div class="row">
+                    <div class="col-lg-9">
+
+                        <!-- PRODUCT CARD -->
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/01.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge rent">rent</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">property</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">house</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/Negotiable</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/02.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge sale">sale</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">fashion</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">shoes</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/fixed</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/03.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge sale">sale</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">stationary</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">book</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/Negotiable</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/04.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge sale">sale</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">electronics</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">television</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/fixed</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/05.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge sale">sale</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">gadget</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">headphone</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/Negotiable</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/06.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge rent">rent</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">automobile</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">cycle</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/per hour</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/07.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge booking">booking</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Luxury</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">resort</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/per day</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/08.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge sale">sale</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">electronics</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">mobile</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/fixed</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/09.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge sale">sale</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">animal</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">cat</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/fixed</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/10.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge rent">rent</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">automobile</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">car</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/per km</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/11.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge booking">booking</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">property</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">apartment</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/per year</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/12.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge sale">sale</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">fashion</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">jeans</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/fixed</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/13.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge sale">sale</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">electronics</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">laptop</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/Negotiable</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/14.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge rent">rent</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">automobile</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">bike</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/per hour</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 card-grid">
+                                <div class="product-card">
+                                    <div class="product-head">
+                                        <div class="product-img" style="background: url(images/product/15.jpg) no-repeat center; background-size: cover;">
+                                            <i class="cross-badge fas fa-bolt"></i>
+                                            <span class="flat-badge sale">sale</span>
+                                            <ul class="product-meta">
+                                                <li><i class="fas fa-eye"></i><p>264</p></li>
+                                                <li><i class="fas fa-mouse"></i><p>134</p></li>
+                                                <li><i class="fas fa-star"></i><p>4.5/7</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-tag">
+                                            <i class="fas fa-tags"></i>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">electronics</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">camera</li>
+                                            </ol>
+                                        </div>
+                                        <div class="product-title">
+                                            <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                            <ul class="product-location">
+                                                <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
+                                                <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-price">
+                                                <h5>$1500</h5>
+                                                <span>/fixed</span>
+                                            </div>
+                                            <ul class="product-widget">
+                                            <li>
+                                                <a href="compare.html" class="tooltip">
+                                                    <i class="fas fa-compress"></i>
+                                                    <span class="tooltext top">compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button class="tooltip">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="tooltext top">bookmark</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT PAGINATION -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <i class="fas fa-long-arrow-alt-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">...</li>
+                                    <li class="page-item"><a class="page-link" href="#">67</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <i class="fas fa-long-arrow-alt-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+
+                        <!-- PRODUCT SIDEBAR -->
+                        <div class="row">
+                            <div class="col-md-6 col-lg-12">
+                                <div class="product-sidebar">
+                                    <div class="product-sidebar-title">
+                                        <h6>Filter by Price</h6>
+                                    </div>
+                                    <div class="product-sidebar-content">
+                                        <div class="price-range">
+                                            <input type="text" id="amount" readonly>
+                                            <div id="slider-range"></div>
+                                        </div>
+                                        <button type="button" class="product-filter-btn">
+                                            <i class="fas fa-search"></i>
+                                            <span>search</span>
+                                        </button>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="col-md-6 col-lg-12">
+                                <div class="product-sidebar">
+                                    <div class="product-sidebar-title">
+                                        <h6>Filter by type</h6>
+                                    </div>
+                                    <div class="product-sidebar-content">
+                                        <ul class="product-sidebar-list">
+                                            <li>
+                                                <input type="checkbox" id="typ1">
+                                                <label for="typ1">sales</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="typ2">
+                                                <label for="typ2">rental</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="typ3">
+                                                <label for="typ3">booking</label>
+                                            </li>
+                                        </ul>
+                                        <button class="product-filter-btn">
+                                            <i class="fas fa-broom"></i>
+                                            <span>Clear Filter</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12">
+                                <div class="product-sidebar">
+                                    <div class="product-sidebar-title">
+                                        <h6>Filter by rating</h6>
+                                    </div>
+                                    <div class="product-sidebar-content">
+                                        <ul class="product-sidebar-list rating">
+                                            <li>
+                                                <input type="checkbox" id="rat1">
+                                                <label for="rat1">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="rat2">
+                                                <label for="rat2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="rat3">
+                                                <label for="rat3">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="rat4">
+                                                <label for="rat4">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="rat5">
+                                                <label for="rat5">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <button class="product-filter-btn">
+                                            <i class="fas fa-broom"></i>
+                                            <span>Clear Filter</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12">
+                                <div class="product-sidebar">
+                                    <div class="product-sidebar-title">
+                                        <h6>Filter by cities</h6>
+                                    </div>
+                                    <div class="product-sidebar-content">
+                                        <div class="product-sidebar-search">
+                                            <input type="text" placeholder="Search">
+                                        </div>
+                                        <ul class="product-sidebar-list widget">
+                                            <li>
+                                                <input type="checkbox" id="cit1">
+                                                <label for="cit1">
+                                                    <span>Los Angeles</span>
+                                                    <span>(15)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="cit2">
+                                                <label for="cit2">
+                                                    <span>San Francisco</span>
+                                                    <span>(28)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="cit3">
+                                                <label for="cit3">
+                                                    <span>California</span>
+                                                    <span>(35)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="cit4">
+                                                <label for="cit4">
+                                                    <span>New York</span>
+                                                    <span>(47)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="cit5">
+                                                <label for="cit5">
+                                                    <span>Manhattan</span>
+                                                    <span>(59)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="cit6">
+                                                <label for="cit6">
+                                                    <span>Baltimore</span>
+                                                    <span>(64)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="cit7">
+                                                <label for="cit7">
+                                                    <span>Avocados</span>
+                                                    <span>(19)</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <button class="product-filter-btn">
+                                            <i class="fas fa-broom"></i>
+                                            <span>Clear Filter</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12">
+                                <div class="product-sidebar">
+                                    <div class="product-sidebar-title">
+                                        <h6>Filter by tags</h6>
+                                    </div>
+                                    <div class="product-sidebar-content">
+                                        <div class="product-sidebar-search">
+                                            <input type="text" placeholder="Search">
+                                        </div>
+                                        <ul class="product-sidebar-list widget">
+                                            <li>
+                                                <input type="checkbox" id="tag1">
+                                                <label for="tag1">
+                                                    <span>private car</span>
+                                                    <span>(13)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="tag2">
+                                                <label for="tag2">
+                                                    <span>motorbike</span>
+                                                    <span>(28)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="tag3">
+                                                <label for="tag3">
+                                                    <span>ladies bag</span>
+                                                    <span>(35)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="tag4">
+                                                <label for="tag4">
+                                                    <span>jeans pant</span>
+                                                    <span>(47)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="tag5">
+                                                <label for="tag5">
+                                                    <span>shoes</span>
+                                                    <span>(59)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="tag6">
+                                                <label for="tag6">
+                                                    <span>wallet</span>
+                                                    <span>(64)</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="tag7">
+                                                <label for="tag7">
+                                                    <span>microphone</span>
+                                                    <span>(19)</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <button class="product-filter-btn">
+                                            <i class="fas fa-broom"></i>
+                                            <span>Clear Filter</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12">
+                                <div class="product-sidebar">
+                                    <div class="product-sidebar-title">
+                                        <h6>Filter by Categories</h6>
+                                    </div>
+                                    <div class="product-sidebar-content">
+                                        <div class="product-sidebar-search">
+                                            <input type="text" placeholder="Search">
+                                        </div>
+                                        <ul class="nasted-dropdown">
+                                            <li>
+                                                <div class="nasted-menu">
+                                                    <p><span class="fas fa-tags"></span>electronics</p>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <ul class="nasted-menu-list">
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="nasted-menu">
+                                                    <p><span class="fas fa-tags"></span>gadgets</p>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <ul class="nasted-menu-list">
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="nasted-menu">
+                                                    <p><span class="fas fa-tags"></span>furnitures</p>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <ul class="nasted-menu-list">
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="nasted-menu">
+                                                    <p><span class="fas fa-tags"></span>animals</p>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <ul class="nasted-menu-list">
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="nasted-menu">
+                                                    <p><span class="fas fa-tags"></span>fashions</p>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <ul class="nasted-menu-list">
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="nasted-menu">
+                                                    <p><span class="fas fa-tags"></span>motorbikes</p>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <ul class="nasted-menu-list">
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="nasted-menu">
+                                                    <p><span class="fas fa-tags"></span>properties</p>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <ul class="nasted-menu-list">
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="nasted-menu">
+                                                    <p><span class="fas fa-tags"></span>automobiles</p>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <ul class="nasted-menu-list">
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="nasted-menu">
+                                                    <p><span class="fas fa-tags"></span>bussiness</p>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <ul class="nasted-menu-list">
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                    <li><a href="#">Demo item (0)</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <button class="product-filter-btn">
+                                            <i class="fas fa-broom"></i>
+                                            <span>Clear Filter</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                    MY ADS PART END
+        =======================================-->
+
+
+        <!--=====================================
+                    FOOTER PART PART
+        =======================================-->
+        <footer class="footer-part">
+            <div class="container">
+                <div class="row newsletter">
+                    <div class="col-lg-6">
+                        <div class="news-content">
+                            <h2>Subscribe for Latest Offers</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam, aliquid reiciendis! Exercitationem soluta provident non.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="news-form">
+                            <input type="text" placeholder="Enter Your Email Address">
+                            <button class="btn btn-inline">
+                                <i class="fas fa-envelope"></i>
+                                <span>Subscribe</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="footer-content">
+                            <h3>Contact Us</h3>
+                            <ul class="footer-address">
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <p>1420 West Jalkuri Fatullah, <span>Narayanganj, BD</span></p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <p>support@classicads.com <span>info@classicads.com</span></p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone-alt"></i>
+                                    <p>+8801838288389 <span>+8801941101915</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="footer-content">
+                            <h3>Quick Links</h3>
+                            <ul class="footer-widget">
+                                <li><a href="#">Store Location</a></li>
+                                <li><a href="#">Orders Tracking</a></li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Size Guide</a></li>
+                                <li><a href="#">Faq</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="footer-content">
+                            <h3>Information</h3>
+                            <ul class="footer-widget">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Delivery System</a></li>
+                                <li><a href="#">Secure Payment</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="footer-info">
+                            <a href="#"><img src="images/logo.png" alt="logo"></a>
+                            <ul class="footer-count">
+                                <li>
+                                    <h5>929,238</h5>
+                                    <p>Registered Users</p>
+                                </li>
+                                <li>
+                                    <h5>242,789</h5>
+                                    <p>Community Ads</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-card-content">
+                            <div class="footer-payment">
+                                <a href="#"><img src="images/pay-card/01.jpg" alt="01"></a>
+                                <a href="#"><img src="images/pay-card/02.jpg" alt="02"></a>
+                                <a href="#"><img src="images/pay-card/03.jpg" alt="03"></a>
+                                <a href="#"><img src="images/pay-card/04.jpg" alt="04"></a>
+                            </div>
+                            <div class="footer-option">
+                                <button type="button"><i class="fas fa-globe"></i>English</button>
+                                <button type="button"><i class="fas fa-dollar-sign"></i>USD</button>
+                            </div>
+                            <div class="footer-app">
+                                <a href="#"><img src="images/play-store.png" alt="play-store"></a>
+                                <a href="#"><img src="images/app-store.png" alt="app-store"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-end">
+                <div class="container">
+                    <div class="footer-end-content">
+                        <p>All Copyrights Reserved &copy; 2021 - Developed by <a href="#">Mironcoder</a></p>
+                        <ul class="social-transparent footer-social">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--=====================================
+                    FOOTER PART END
+        =======================================-->
+
+        
+        <!--=====================================
+                    JS LINK PART START
+        =======================================-->
+        <!-- FOR BOOTSTRAP -->
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/vendor/popper.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <!-- FOR PRICE RANGE -->
+        <script src="js/vendor/jquery-ui.min.js"></script>
+        <script src="js/custom/price-range.js"></script>
+
+        <!-- FOR INTERACTION -->
+        <script src="js/custom/main.js"></script>
+        <!--=====================================
+                    JS LINK PART END
+        =======================================-->
+    </body>
+</html>
+
+
+
+
+
+

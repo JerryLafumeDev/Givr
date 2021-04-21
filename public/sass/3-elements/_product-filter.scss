@@ -1,0 +1,59 @@
+
+
+/*=====================================
+        PRODUCT FILTER ELEMENT
+======================================*/
+.product-filter {
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    @include flex__center;
+    border-radius: var(--card-radius);
+    background: var(--light-white);
+    border: 1px solid var(--border);
+    justify-content: space-between;
+}
+
+.product-page-number {
+    p {
+        font-weight: 500;
+    }
+}
+
+.product-short-select {
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:focus {
+        border-color: var(--primary);
+        box-shadow: none;
+    }
+}
+
+.product-card-type {
+    display: flex;
+
+    li {
+        margin-left: 12px;
+
+        i {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+            background: var(--white);
+        }
+    }
+}
+
+.grid-verti.active,
+.grid-hori.active {
+    i {
+        color: var(--white);
+        background: var(--primary);
+    }
+}

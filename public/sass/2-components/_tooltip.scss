@@ -1,0 +1,123 @@
+
+
+/*=====================================
+        TOOLTIP COMPONENTS STYLE
+======================================*/
+.tooltip {
+    display: inline-block;
+    position: relative;
+    opacity: 1;
+    z-index: 1;
+
+    &:hover {
+        .tooltext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .top {
+            bottom: 65%;
+        }
+
+        .bottom {
+            top: 65%;
+        }
+
+        .left {
+            right: 15%;
+        }
+
+        .right {
+            left: 15%;
+        }
+    } 
+    
+    // TOOLTIP STYLE
+    .tooltext {
+        position: absolute;
+        z-index: 1;
+        font-size: 11px;
+        padding: 6px 6px;
+        line-height: 10px;
+        text-align: center;
+        letter-spacing: 0.3px;
+        border-radius: 4px;
+        color: var(--white);
+        background: var(--dark);
+        font-family: sans-serif;
+        text-transform: capitalize;
+        border: 1px solid var(--light-white);
+        visibility: hidden;
+        opacity: 0;
+        @include cursor__transition;
+    
+        &::before {
+            position: absolute;
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 1px;
+            background: var(--dark);
+        }
+    }
+
+    // TOP TOOLTIP
+    .top {
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &::before {
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            border-right: 1px solid var(--light-white);
+            border-bottom: 1px solid var(--light-white);
+        }
+    }
+
+    // BOTTOM TOOLTIP
+    .bottom {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+
+        &::before {
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            border-top: 1px solid var(--light-white);
+            border-left: 1px solid var(--light-white);
+        }
+    } 
+    
+    // LEFT TOOLTIP
+    .left {
+        top: 50%;
+        right: 0%;
+        transform: translate(-50%, -50%);
+
+        &::before {
+            right: -4px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            border-top: 1px solid var(--light-white);
+            border-right: 1px solid var(--light-white);
+        }
+    }
+    
+    // RIGHT TOOLTIP
+    .right {
+        top: 50%;
+        left: 0%;
+        transform: translate(50%, -50%);
+
+        &::before {
+            left: -4px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            border-left: 1px solid var(--light-white);
+            border-bottom: 1px solid var(--light-white);
+        }
+    }
+}

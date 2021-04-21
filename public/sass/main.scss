@@ -1,0 +1,50 @@
+
+
+/*========================================
+
+Template type   :  Classified Ads
+Version         :  v1.0
+Author name     :  Mironcoder
+Support mail    :  mironcoder@gmail.com
+Author Profile  :  https://themeforest.net/user/mironcoder
+
+=========================================*/
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "1-helpers/_font.scss";
+@import "1-helpers/_variable.scss";
+@import "1-helpers/_mixin.scss";
+@import "1-helpers/_common.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "2-components/_dropdown.scss";
+@import "2-components/_button.scss";
+@import "2-components/_form.scss";
+@import "2-components/_tooltip.scss";
+@import "2-components/_nav-tabs.scss";
+@import "2-components/_breadcrumb.scss";
+@import "2-components/_social-icon.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "3-elements/_section-heading.scss";
+
+
+//=======================================
+//          4 - LAYOUTS FOLDER
+//=======================================
+@import "4-layouts/_header.scss";
+@import "4-layouts/_navbar.scss";
+@import "4-layouts/_sidebar.scss";
+@import "4-layouts/_btmbar.scss";
+@import "4-layouts/_footer.scss";
+@import "4-layouts/_newsletter.scss";
+

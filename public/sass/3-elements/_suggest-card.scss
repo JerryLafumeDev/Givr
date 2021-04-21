@@ -1,0 +1,48 @@
+
+
+
+/*=====================================
+            SUGGEST CARD STYLE
+======================================*/
+.suggest-card {
+    width: 145px;
+    height: auto;
+    cursor: pointer;
+    margin: 0px 8px;
+    padding: 28px 0px 21px;
+    text-align: center;
+    align-items: center;
+    border-radius: var(--card-radius);
+    border-bottom: 2px solid var(--primary);
+    background: #dffbff;
+}
+
+.suggest-img {
+    margin-bottom: 18px;
+
+    img {
+        height: 50px;
+    }
+}
+
+.suggest-meta {
+    h6 {
+        font-weight: 500;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+
+        a {
+            color: var(--heading);
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--primary);
+    }
+}

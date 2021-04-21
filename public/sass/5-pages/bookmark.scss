@@ -1,0 +1,51 @@
+
+
+
+// MIXINS
+@import "../1-helpers/_mixin.scss";
+
+// COMPONENTS
+@import "../2-components/_price-range.scss";
+@import "../2-components/_pagination.scss";
+@import "../2-components/_card-badge.scss";
+
+// ELEMENTS
+@import "../3-elements/_product-filter.scss";
+@import "../3-elements/_product-card.scss";
+
+// LAYOUTS
+@import "../4-layouts/_single-banner.scss";
+@import "../4-layouts/_dash-header.scss";
+
+
+/*=====================================
+            BOOKMARK PAGE STYLE
+======================================*/
+.dash-header-card {
+    box-shadow: var(--primary-bshadow);
+}
+
+.bookmark-part {
+    padding: 50px 0px 70px;
+}
+
+// FOR RESPONSIVE
+@media (max-width: 767px) {
+    .bookmark-part {
+        padding: 50px 0px 30px;
+    }
+
+    .product-filter {
+        flex-direction: column;
+    }
+
+    .product-short-select {
+        margin: 15px 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bookmark-part {
+        padding: 50px 0px 50px;
+    }
+}

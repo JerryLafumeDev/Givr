@@ -1,0 +1,138 @@
+
+
+
+/*=====================================
+            BTMBAR PART STYLE
+======================================*/
+.btmbar-part {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 3;
+    padding: 10px 0px;
+    background: var(--white);
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.btmbar-widget {
+    @include flex__center;
+    justify-content: space-between;
+
+    li {
+        button,
+        a {
+            border: none;
+            outline: none;
+            background: none;
+            position: relative;
+            @include flex__center;
+            flex-direction: column;
+
+            i {
+                width: 35px;
+                height: 35px;
+                font-size: 13px;
+                line-height: 35px;
+                text-align: center;
+                color: var(--gray);
+                background: var(--light-white);
+                border-radius: var(--icon-radius);
+                @include cursor__transition;
+
+                &:hover {
+                    color: var(--white);
+                    background: var(--primary);
+                    text-shadow: var(--primary-tshadow);
+                }
+            }
+
+            sup {
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                height: 24px;
+                font-size: 12px;
+                padding: 0px 6px;
+                line-height: 20px;
+                border-radius: 50%;
+                color: var(--white);
+                background: var(--primary);
+                border: 2px solid var(--white);
+                text-shadow: var(--primary-tshadow);
+                box-shadow: var(--primary-bshadow);
+            }
+
+            span {
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                width: 85px;
+                font-size: 12px;
+                padding: 7px 3px;
+                line-height: 12px;
+                text-align: center;
+                border-radius: 5px;
+                color: var(--white);
+                background: var(--dark);
+                font-family: sans-serif;
+                transform: translateX(-50%);
+                visibility: hidden;
+                opacity: 0;
+                @include cursor__transition;
+        
+                &::before {
+                    position: absolute;
+                    content: "";
+                    bottom: -4px;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(45deg);
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 1px;
+                    background: var(--dark);
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            margin-top: -30px;
+
+            a {
+                i {
+                    width: 70px;
+                    height: 70px;
+                    line-height: 52px;
+                    font-size: 20px;
+                    color: var(--white);
+                    background: var(--primary);
+                    border: 8px solid var(--white);
+
+                    &:hover {
+                        background: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.plus-btn {
+    &:hover {
+        span {
+            visibility: visible;
+            opacity: 1;
+            top: -25px;
+        }
+    }
+}
+
+// for bottom-bar responsive style
+
+@media (max-width: 1199px) {
+    .btmbar-part {
+        display: block;
+    }
+}

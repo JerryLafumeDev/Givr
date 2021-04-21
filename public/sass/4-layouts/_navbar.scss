@@ -1,0 +1,28 @@
+
+
+/*======================================
+           NAVBAR PART STYLE
+=======================================*/
+.navbar-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-link {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 15px;
+    color: var(--gray);
+    text-transform: capitalize;
+    @include flex__center;
+    justify-content: space-between;
+    @include cursor__transition;
+
+    &:hover {
+        color: var(--primary);
+        background: var(--light-white);
+    }
+
+    i {
+        font-size: 10px;
+    }
+}

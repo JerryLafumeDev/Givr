@@ -1,0 +1,30 @@
+
+
+
+/*=====================================
+        PRICE RANGE ELEMENT STYLE
+======================================*/
+#slider-range {
+    border-radius: 30px;
+
+    span {
+        border-radius: 50%;
+    }
+}
+
+#amount {
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 600;
+    font-family: sans-serif;
+    border: none;
+    background: none;
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.ui-state-active {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}

@@ -1,0 +1,50 @@
+
+
+// MIXINS
+@import "../1-helpers/_mixin.scss";
+
+// COMPONENTS
+@import "../2-components/_table.scss";
+@import "../2-components/_card-badge.scss";
+
+// ELEMENTS
+
+// LAYOUTS
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+            COMPARE PAGE STYLE
+======================================*/
+.compare-part {
+    padding: 0px 0px 100px;
+
+    .container {
+        padding: 0px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+// Responsive style
+@media (max-width: 991px) {
+    .compare-list {
+        overflow-x: scroll;
+    }
+
+    .table-list {
+        width: 900px;
+    }
+}
+
+@media (max-width: 767px) {
+    .compare-part {
+        padding: 0px 0px 60px;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+    .compare-part {
+        padding: 0px 0px 80px;
+    }
+}

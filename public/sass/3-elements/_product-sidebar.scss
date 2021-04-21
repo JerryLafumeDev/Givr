@@ -1,0 +1,118 @@
+
+
+
+/*=====================================
+    PRODUCT SIDEBAR ELEMENT STYLE
+======================================*/
+
+// PRODUCT SIDEBAR CARD
+.product-sidebar {
+    padding: 25px 15px;
+    margin-bottom: 30px;
+    background: var(--light-white);
+    border-radius: var(--card-radius);
+    border: 1px solid var(--border);
+}
+
+// PRODUCT SIDEBAR TITLE
+.product-sidebar-title {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+
+    h6 {
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}
+
+// PRODUCT SIDEBAR BUTTON
+.product-filter-btn {
+    border: none;
+    outline: none;
+    background: none;
+    @include flex__center;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 0px;
+    margin-top: 20px;
+    color: var(--primary);
+    text-transform: capitalize;
+    border-radius: var(--card-radius);
+    border: 1px solid var(--primary);
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+    @include cursor__transition;
+
+    &:hover {
+        color: var(--white);
+        background: var(--primary);
+    }
+
+    i {
+        margin-top: -2px;
+        margin-right: 5px;
+    }
+}
+
+// PRODUCT SIDEBAR SEARCH
+.product-sidebar-search {
+    margin-bottom: 10px;
+
+    input {
+        width: 100%;
+        height: 40px;
+        padding: 0px 15px;
+        border-radius: var(--card-radius);
+        border: 1px solid var(--border);
+    }
+}
+
+// PRODUCT SIDEBAR LIST
+.product-sidebar-list {
+    li {
+        padding: 6px 8px;
+        @include flex__center;
+        justify-content: flex-start;
+
+        input {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        label {
+            width: 100%;
+            font-size: 15px;
+            cursor: pointer;
+            text-transform: capitalize;
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+}
+
+.rating {
+    i {
+        margin-right: 5px;
+    }
+}
+
+.widget {
+    height: 200px;
+    overflow-y: scroll;
+
+    label {
+        @include flex__center;
+       justify-content: space-between;
+    }
+}
+
+// FOR RESPONSIVE STYLE
+@media (min-width: 768px) and (max-width: 991px) {
+    .product-sidebar {
+        height: 400px;
+    }
+}
+

@@ -1,0 +1,68 @@
+
+
+
+// MIXINS
+@import "../1-helpers/_mixin.scss";
+
+// COMPONENTS
+@import "../2-components/_price-range.scss";
+@import "../2-components/_pagination.scss";
+@import "../2-components/_card-badge.scss";
+
+// ELEMENTS
+@import "../3-elements/_product-filter.scss";
+@import "../3-elements/_product-sidebar.scss";
+@import "../3-elements/_product-card.scss";
+
+// LAYOUTS
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+            AD LIST PART STYLE
+======================================*/
+.ad-list-part {
+    padding: 100px 0px 70px;
+}
+
+
+// FOR RESPONSIVE STYLE
+@media (max-width: 767px) {
+    .ad-list-part {
+        padding: 60px 0px 30px;
+    }
+
+    .product-filter {
+        flex-direction: column;
+    }
+
+    .product-short-select {
+        margin: 15px 0px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 575px) {
+    .ad-list-part {
+        .container {
+            width: 400px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .ad-list-part {
+        padding: 80px 0px 50px;
+
+        .container {
+            max-width: 760px;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .ad-list-part {
+        .container {
+            max-width: 990px;
+        }
+    }
+}
