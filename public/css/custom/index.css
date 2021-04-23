@@ -18,7 +18,9 @@
 .product-short-select.custom-select, .product-card-type{
   display: none;
 }
+#feedD{
 
+}
 .slider-dots ul li {
   width: 25px;
   height: 5px;

@@ -1,27 +1,27 @@
 /******************************
 =============Setup=============
 *******************************/
-var multer  = require('multer')
+var multer  = require('multer');
 // var upload = multer({ dest: 'uploads/' }).single('theImage')
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/')
+      cb(null, path.join(__dirname, '/static/uploads/'))
+      // cb(null, "localhost:" + process.env.PORT + '/static/uploads/')
   },
   filename: function (req, file, cb) {
-    // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-
-    cb(null, new Date().toISOString().replace(/:/g, '-') + file.originalname)
+      crypto.pseudoRandomBytes(16, function (err, raw) {
+          cb(null, raw.toString('hex') + Date.now() + '.' + mime.extension(file.mimetype));
+      });
   }
-})
+});
 
-var upload = multer({ storage: storage })
-
+var upload = multer({storage: storage})
 var express = require('express')
 var app     = express()
 
 require('dotenv').config()
-
+const fileUpload = require('express-fileupload')
 const MongoClient = require('mongodb').MongoClient
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -31,12 +31,12 @@ var ObjectId = require('mongodb').ObjectID
 var morgan       = require('morgan');
 var bodyParser   = require('body-parser')
 var session      = require('express-session');
-var baffle = require('baffle')
+var baffle = require('baffle');
 
 const DB_NAME = process.env.DB_NAME
 const DB_URL =process.env.DB_URL+`/${DB_NAME}`
-const PORT = process.env.PORT || 3000
-const profileUpload = require('express-fileupload')
+const PORT = process.env.PORT || 9999
+// const { Server } = require('mongodb')
 // console.log(`*********URL : ${DB_URL}`)
 var db
 
@@ -57,7 +57,9 @@ require('./config/passport')(passport); // pass passport for configuration
 *******************************/
 
 app.use(express.static('public'))
-app.use(profileUpload())
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+app.use(fileUpload())
 app.use('/uploads' ,express.static('uploads'))
 app.use(morgan('dev'))
 app.use(bodyParser.json())

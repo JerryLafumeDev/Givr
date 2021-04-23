@@ -1,18 +1,25 @@
+
+
+
+
 module.exports = function(app, db, passport, ObjectId, upload) {
 
-  
-  var upload = multer({ storage: storage })
+
   /********************
   =====Base routes=====
   *********************/
   
       // Load root index ===================================================
       app.get('/', function(req, res) {
+        db.collection('posts').find().toArray((err, result) => {
+          if(err) return console.log(err)
         res.render('index.ejs', {
+          user: req.user,
+          posts: result,
           message: req.flash('loginMessage')
         })
-        // res.redirect('/dashboard')
       })
+    })  
   
       app.get('/user/:uID', function(req, res) {
         db.collection('users').findOne({_id: ObjectId(req.params.uID)}, (err,result) => {
@@ -33,7 +40,9 @@ module.exports = function(app, db, passport, ObjectId, upload) {
           })
         })
       })
-  
+    /**************************
+    =====render feed page=====
+    **************************/
       app.get('/feed', isLoggedIn, (req, res) => {
         db.collection('posts').find().toArray((err, result) => {
           if(err) return console.log(err)
@@ -43,6 +52,9 @@ module.exports = function(app, db, passport, ObjectId, upload) {
           })
         })
       })
+    /**************************
+    =====render profile page=====
+    **************************/
       app.get('/profile', isLoggedIn, (req, res) => {
         db.collection('posts').find().toArray((err, result) => {
           if(err) return console.log(err)
@@ -52,6 +64,9 @@ module.exports = function(app, db, passport, ObjectId, upload) {
           })
         })
       })
+    /**************************
+    =====render settings page=====
+    **************************/    
       app.get('/setting', isLoggedIn, (req, res) => {
         db.collection('posts').find().toArray((err, result) => {
           if(err) return console.log(err)
@@ -61,10 +76,49 @@ module.exports = function(app, db, passport, ObjectId, upload) {
           })
         })
       })
-      app.get('/upload', isLoggedIn, (req, res) => {
+    /**************************
+    =====render giv-post page=====
+    **************************/   
+      app.get('/ad-post', isLoggedIn, (req, res) => {
         db.collection('posts').find().toArray((err, result) => {
           if(err) return console.log(err)
-          res.render('upload.ejs' , {
+          res.render('ad-post.ejs' , {
+            user: req.user,
+            posts: result
+          })
+        })
+      })
+    /**************************
+    =====render giv-post page=====
+    **************************/   
+      app.get('/about', isLoggedIn, (req, res) => {
+        db.collection('posts').find().toArray((err, result) => {
+          if(err) return console.log(err)
+          res.render('about.ejs' , {
+            user: req.user,
+            posts: result
+          })
+        })
+      })
+    /**************************
+    =====render grid-details page=====
+    **************************/   
+      app.get('/grid-details', isLoggedIn, (req, res) => {
+        db.collection('posts').find().toArray((err, result) => {
+          if(err) return console.log(err)
+          res.render('grid-details.ejs' , {
+            user: req.user,
+            posts: result
+          })
+        })
+      })
+    /**************************
+    =====render blog-list page=====
+    **************************/   
+      app.get('/blog-list', isLoggedIn, (req, res) => {
+        db.collection('posts').find().toArray((err, result) => {
+          if(err) return console.log(err)
+          res.render('blog-list.ejs' , {
             user: req.user,
             posts: result
           })
@@ -101,65 +155,124 @@ module.exports = function(app, db, passport, ObjectId, upload) {
       =====UPLOAD PROFILE PICTURE=====
       **************************/
 
-      app.post('/uploadAvi', profileUpload.single('file'),(req, res) => {
-        if (req.files) {
-          console.log(req.files);
-          let file = req.files.file
-          let fileName = file.name
-          console.log(fileName);
-          file.mv('uploads/' + fileName, function(err) {
-            if (err) {
-              res.send(err)
-            } else {
-              res.redirect('/feed')
-              // res.send("File Uploaded")
-            }
-          })
-          let profileImg ="../uploads/" + fileName
-          db.collection('users').findOneAndUpdate({
-            _id: ObjectId(req.user._id)
+      // app.post('/uploadAvi', profileUpload.single('file'),(req, res) => {
+      //   if (req.files) {
+      //     console.log(req.files);
+      //     let file = req.files.file
+      //     let fileName = file.name
+      //     console.log(fileName);
+      //     file.mv('uploads/' + fileName, function(err) {
+      //       if (err) {
+      //         res.send(err)
+      //       } else {
+      //         res.redirect('/feed')
+      //         // res.send("File Uploaded")
+      //       }
+      //     })
+      //     let profileImg ="../uploads/" + fileName
+      //     db.collection('users').findOneAndUpdate({
+      //       _id: ObjectId(req.user._id)
            
-          }, {          
-           $set:{
-          local: {
-            profileImg,
-          },
-          __v: 0
+      //     }, {          
+      //      $set:{
+      //     local: {
+      //       profileImg,
+      //     },
+      //     __v: 0
           
-          } 
+      //     } 
             
-          }, {
-            // if profile cant be found it would create a new profile which is why we set it to false
-            upsert: true
-          }, (err, result) => {
-            if (err) return console.log(err)
-            console.log('saved to database')
-          })
-        }
-      })
+      //     }, {
+      //       // if profile cant be found it would create a new profile which is why we set it to false
+      //       upsert: true
+      //     }, (err, result) => {
+      //       if (err) return console.log(err)
+      //       console.log('saved to database')
+      //     })
+      //   }
+      // })
   
   
   
       /**************************
       =====CREATE POST=====
       **************************/
+     const trail = require('path');
+     const util = require('util');
   
-      app.post('/newPost' , upload.single('theImage'),(req,res) => {
-  
-          console.log(req.file)
-          db.collection('posts').insertOne({
+      app.post('/newPost', async (req,res) => {
+        try{
+          console.log(req.files.myImage.name)
+          const {myImage} = req.files;
+          console.log(myImage)
+          const fileName = myImage.name;
+          const size = myImage.data.length;
+          const extension = trail.extname(fileName);
+          const allowedExt = /png|jpeg|jpg|gif|JPG/;
+
+          if(!allowedExt.test(extension)) throw "Unsupported file type!";
+
+          const md5 = myImage.md5;
+          const URL = "/uploads/" + md5  + size + extension;
+
+          await util.promisify(myImage.mv)('./public' + URL );
+
+          res.redirect('/feed')
+          } catch(err){
+            console.log(err);
+            res.status(500).json({
+              message: err,
+            })
+          }
+            db.collection('posts').insertOne({
             title: req.body.title,
-            authorName: req.user.local.username,
+            authorName: req.user.local.name,
             authorID: req.user._id,
-            path: req.file.path,
-            body: req.body.body
-          }, (err, result) => {
-            if(err) return console.log(err)
-            console.log('new order saved')
-            res.redirect('/feed')
+            path: "/uploads/" + req.files.myImage.md5 + req.files.myImage.size + trail.extname(req.files.myImage.name),
+            desc: req.body.desc,
+            category: req.body.category,
+            tag:  req.body.tag,
+            condition: req.body.condition
           })
+          console.log(req.files.myImage.md5)
       })
   
+    // app.post('/newPost', upload.single('myImage'),(req, res) => {
+    //   if(req.files){
+    //     console.log(req.files)
+    //     const {myImage} = req.files
+    //     // var image = Object.keys(req.files)[0]
+    //     console.log(myImage)
+    //     var fileName = myImage.name
+    //     console.log(fileName)
+        
+
+    //     myImage.mv('public/uploads/'+fileName, function (err){
+    //       if (err) {
+    //         res.send(err)
+    //       }else{
+    //         res.redirect('/feed')
+    //       }
+    //     })
+    //        db.collection('posts').insertOne({
+    //         title: req.body.title,
+    //         authorName: req.user.local.name,
+    //         authorID: req.user._id,
+    //         path: 'uploads/'+fileName,
+    //         desc: req.body.desc,
+    //         category: req.body.category,
+    //         tag:  req.body.tag,
+    //         condition: req.body.condition
+    //     }, (err, res) => {
+    //       if (err) return console.log(err)
+    //       console.log('saved to database')
+    //     })
+    //   }
+
+    // })
+
+
+
 
      /**************************
       =====CREATE COMMENT=====
@@ -279,7 +392,7 @@ module.exports = function(app, db, passport, ObjectId, upload) {
   // process the signup form
   app.post('/signup', passport.authenticate('local-signup', {
       successRedirect : '/feed', // redirect to the secure profile section
-      failureRedirect : '/signup', // redirect back to the signup page if there is an error
+      failureRedirect : '/', // redirect back to the signup page if there is an error
       failureFlash : true // allow flash messages
   }));
 

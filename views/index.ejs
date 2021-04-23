@@ -39,10 +39,10 @@
         <link rel="stylesheet" href="fonts/font-awesome/fontawesome.css">
 
         <!-- FOR SLICK SLIDER -->
-        <link rel="stylesheet" href="css/vendor/slick.min.css">
+        <link rel="stylesheet" href="../css/vendor/slick.min.css">
 
         <!-- FOR BOOTSTRAP -->
-        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/vendor/bootstrap.min.css">
 
         <!-- FOR COMMON STYLE -->
         <link rel="stylesheet" href="css/custom/main.css">
@@ -66,7 +66,7 @@
                             <li >
                             </li>
                             <li>
-                                <a href="index.html" class="header-logo">
+                                <a href="/" class="header-logo">
                                     <img src="images/logo.png" alt="logo">
                                 </a>
                             </li>
@@ -285,13 +285,13 @@
                             <li>
                                 <button class="header-notify">
                                     <i class="fas fa-bell"></i>
-                                    <sup>1</sup>
+                                    
                                 </button>
                             </li>
                             <li>
                                 <button class="header-message">
                                     <i class="fas fa-envelope"></i>
-                                    <sup>3</sup>
+                                    
                                 </button>
                             </li>
                         </ul>
@@ -432,8 +432,8 @@
                             <p>(4,521) ads</p>
                         </div>
                     </div>
-                    <div class="suggest-card">
-                        <div class="suggest-img">
+                    <div class="suggest-card" style="display: none;">
+                        <div class="suggest-img" style="display: none;">
                             <img src="images/suggest/hospitality.png" alt="clothes">
                         </div>
                         <div class="suggest-meta">
@@ -486,7 +486,7 @@
                             <p>(4,521) ads</p>
                         </div>
                     </div>
-                    <div class="suggest-card">
+                    <div class="suggest-card" style="display: none;">
                         <div class="suggest-img">
                             <img src="images/suggest/animals.png" alt="pet">
                         </div>
@@ -1693,11 +1693,14 @@
                 </div>
 
                 <!-- PRODUCT CARD -->
-                <div class="row">
+                <div class="row" id="feedD">
+                    <% if(posts) { %>
+                        <% for(let i = 0 ; i<posts.length;i++) { %>
+
                     <div class="col-sm-6 col-md-4 col-lg-3 card-grid">
                         <div class="product-card">
                             <div class="product-head">
-                                <div class="product-img" style="background: url(images/product/01.jpg) no-repeat center; background-size: cover;">
+                                <div class="product-img" style="background: url(<%= posts[i].path %>) no-repeat center; background-size: cover;">
                                     <i class="cross-badge fas fa-bolt"></i>
                                     <span class="flat-badge rent">rent</span>
                                     <ul class="product-meta">
@@ -1711,10 +1714,10 @@
                                 <div class="product-tag">
                                     <i class="fas fa-tags"></i>
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">Housing</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Extra Room</li>
+                                        <li class="breadcrumb-item"><a href="#"><%= posts[i].category%></a></li>
+                                        <li class="breadcrumb-item active" aria-current="page"><%= posts[i].tag%></li>
                                     </ol>
-                                                                        <ul class="product-widget">
+                                        <ul class="product-widget">
                                             <li>
                                                 <a href="compare.html" class="tooltip">
                                                     <i class="far fa-envelope"></i>
@@ -1730,7 +1733,7 @@
                                         </ul>
                                 </div>
                                 <div class="product-title">
-                                    <h5><a href="grid-details.html" class="realTitle">Fournished Bedroom In Brookline, Cory required</a></h5>
+                                    <h5><a href="grid-details.html" class="realTitle"><%= posts[i].title%></a></h5>
                                     <ul class="product-location">
                                         <li><i class="fas fa-map-marker-alt"></i><p>Brookline, MA</p></li>
                                         <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
@@ -1745,6 +1748,9 @@
                             </div>
                         </div>
                     </div>
+                    <% } %>
+
+                    <% } %>
                     <div class="col-sm-6 col-md-4 col-lg-3 card-grid">
                         <div class="product-card">
                             <div class="product-head">
@@ -3230,16 +3236,16 @@
                     JS LINK PART START
         =======================================-->
         <!-- FOR BOOTSTRAP -->
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="js/vendor/popper.min.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="../js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="../js/vendor/popper.min.js"></script>
+        <script src="../js/vendor/bootstrap.min.js"></script>
 
         <!-- FOR SLICK SLIDER -->
-        <script src="js/vendor/slick.min.js"></script>
-        <script src="js/custom/slick.js"></script>
+        <script src="../js/vendor/slick.min.js"></script>
+        <script src="../js/custom/slick.js"></script>
 
         <!-- FOR INTERACTION -->
-        <script src="js/custom/main.js"></script>
+        <script src="../js/custom/main.js"></script>
         <!--=====================================
                     JS LINK PART END
         =======================================-->
