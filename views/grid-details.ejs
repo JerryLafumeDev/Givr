@@ -29,28 +29,28 @@
                     CSS LINK PART START
         =======================================-->
         <!-- FOR PAGE TITLE ICON -->
-        <link rel="icon" href="images/favicon.png">
+        <link rel="icon" href="../images/favicon.png">
 
         <!-- FOR FLATICON -->
-        <link rel="stylesheet" href="fonts/flaticon/flaticon.css">
+        <link rel="stylesheet" href="../fonts/flaticon/flaticon.css">
 
         <!-- FOR FONTAWESOME -->
-        <link rel="stylesheet" href="fonts/font-awesome/fontawesome.css">
+        <link rel="stylesheet" href="../fonts/font-awesome/fontawesome.css">
 
         <!-- FOR PRICE RANGE -->
-        <link rel="stylesheet" href="css/vendor/jquery-ui.min.css">
+        <link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
 
         <!-- FOR SLICK SLIDER -->
-        <link rel="stylesheet" href="css/vendor/slick.min.css">
+        <link rel="stylesheet" href="../css/vendor/slick.min.css">
 
         <!-- FOR BOOTSTRAP -->
-        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/vendor/bootstrap.min.css">
 
         <!-- FOR COMMON STYLE -->
-        <link rel="stylesheet" href="css/custom/main.css">
+        <link rel="stylesheet" href="../css/custom/main.css">
 
         <!-- FOR GRID DETAILS PAGE STYLE -->
-        <link rel="stylesheet" href="css/custom/grid-details.css">
+        <link rel="stylesheet" href="../css/custom/grid-details.css">
         <!--=====================================
                     CSS LINK PART END
         =======================================-->
@@ -71,18 +71,15 @@
                                 </button>
                             </li>
                             <li>
-                                <a href="index.html" class="header-logo">
-                                    <img src="images/logo.png" alt="logo">
+                                <a href="/feed" class="header-logo">
+                                    <img src="../images/logo.png" alt="logo">
                                 </a>
                             </li>
                             <li>
-                                <a href="user-form.html" class="header-user">
-                                    <i class="fas fa-user"></i>
-                                    <span>Login</span>
-                                </a>
+                                <a href="/profile"><%=user.local.name%></a>
                             </li>
                             <li>
-                                <button type="button" class="header-src">
+                                <button type="button" class="header-src" style="display: none;">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </li>
@@ -136,7 +133,7 @@
                         <ul class="header-widget">
                             <li>
                                 <button class="header-favourite">
-                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-bookmark"></i>
                                     <sup>0</sup>
                                 </button>
                             </li>
@@ -155,7 +152,7 @@
                         </ul>
                         <a href="ad-post.html" class="btn btn-inline">
                             <i class="fas fa-plus-circle"></i>
-                            <span>post your ad</span>
+                            <span>post a giv</span>
                         </a>
                     </div>
                     
@@ -173,94 +170,32 @@
         <div class="sidebar-part">
             <div class="sidebar-body">
                 <div class="sidebar-header">
-                    <a href="index.html" class="sidebar-logo"><img src="images/logo.png" alt="logo"></a>
+                    <a href="/feed" class="sidebar-logo"><img src="../images/logo2.png" alt="logo"></a>
                     <button class="sidebar-cross"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="sidebar-content">
                     <div class="sidebar-profile">
-                        <a href="#" class="sidebar-avatar"><img src="images/avatar/01.jpg" alt="avatar"></a>
-                        <h4><a href="#" class="sidebar-name">Jackon Honson</a></h4>
+                        <a href="#" class="sidebar-avatar"><img src="../images/avatar/01.jpg" alt="avatar"></a>
+                        <h4><a href="#" class="sidebar-name"><%= user.local.name%></a></h4>
                         <a href="ad-post.html" class="btn btn-inline sidebar-btn">
                             <i class="fas fa-plus-circle"></i>
-                            <span>post your ad</span>
+                            <span>post a giv</span>
                         </a>
                     </div>
                     <div class="sidebar-menu">
                         <ul class="nav nav-tabs">
-                            <li><a href="#main-menu" class="nav-link active" data-toggle="tab">Main Menu</a></li>
-                            <li><a href="#author-menu" class="nav-link" data-toggle="tab">Author Menu</a></li>
+                            <li><a href="#author-menu" class="nav-link" data-toggle="tab">Menu</a></li>
                         </ul>
 
-                        <div class="tab-pane active" id="main-menu">
-                            <ul class="navbar-list">
-                                <li class="navbar-item"><a class="navbar-link" href="index.html">Home</a></li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>Categories</span>
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                    <ul class="dropdown-list">
-                                        <li><a class="dropdown-link" href="category-list.html">category list</a></li>
-                                        <li><a class="dropdown-link" href="category-details.html">category details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>Advertise List</span>
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                    <ul class="dropdown-list">
-                                        <li><a class="dropdown-link" href="grid-list.html">grid list</a></li>
-                                        <li><a class="dropdown-link" href="leftbar-list.html">leftbar list</a></li>
-                                        <li><a class="dropdown-link" href="rightbar-list.html">rightbar list</a></li>
-                                    </ul>
-                                </li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>Advertise details</span>
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                    <ul class="dropdown-list">
-                                        <li><a class="dropdown-link" href="grid-details.html">grid details</a></li>
-                                        <li><a class="dropdown-link" href="leftbar-details.html">leftbar details</a></li>
-                                        <li><a class="dropdown-link" href="rightbar-details.html">rightbar details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>Pages</span>
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                    <ul class="dropdown-list">
-                                        <li><a class="dropdown-link" href="about.html">About Us</a></li>
-                                        <li><a class="dropdown-link" href="compare.html">Ad Compare</a></li>
-                                        <li><a class="dropdown-link" href="cities.html">Ad by Cities</a></li>
-                                        <li><a class="dropdown-link" href="price.html">Pricing Plan</a></li>
-                                        <li><a class="dropdown-link" href="user-form.html">User Form</a></li>
-                                        <li><a class="dropdown-link" href="404.html">404</a></li>
-                                    </ul>
-                                </li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>blogs</span>
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                    <ul class="dropdown-list">
-                                        <li><a class="dropdown-link" href="blog-list.html">Blog list</a></li>
-                                        <li><a class="dropdown-link" href="blog-details.html">blog details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="navbar-item"><a class="navbar-link" href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
+                      
 
-                        <div class="tab-pane" id="author-menu">
+                        <div class="tab-pane active" id="author-menu">
                             <ul class="navbar-list">
-                                <li class="navbar-item"><a class="navbar-link" href="dashboard.html">Dashboard</a></li>
-                                <li class="navbar-item"><a class="navbar-link" href="profile.html">Profile</a></li>
-                                <li class="navbar-item"><a class="navbar-link" href="ad-post.html">Ad Post</a></li>
-                                <li class="navbar-item"><a class="navbar-link" href="my-ads.html">My Ads</a></li>
-                                <li class="navbar-item"><a class="navbar-link" href="setting.html">Settings</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/feed">Home</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/profile">Profile</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/ad-post">Post a Giv</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="my-ads.html">My Givs</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/setting">Settings</a></li>
                                 <li class="navbar-item navbar-dropdown">
                                     <a class="navbar-link" href="bookmark.html">
                                         <span>bookmark</span>
@@ -347,11 +282,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="single-content">
-                            <h2>grid ad details</h2>
+                            <h2>Item details</h2>
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="grid-list.html">grid list</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">grid details</li>
+                                <li class="breadcrumb-item"><a href="/feed">Home</a></li>
+                                <li class="breadcrumb-item" style="display: none;"><a href="grid-list.html">grid list</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Item details</li>
                             </ol>
                         </div>
                     </div>
@@ -372,14 +307,14 @@
                     <div class="col-lg-10 m-auto">
 
                         <div class="row">
-                            <div class="col-md-6 col-lg-6">
+                            <div class="col-md-6 col-lg-6" style="display: none;">
                                 <!-- PRICE CARD -->
                                 <div class="ad-details-price">
                                     <h2>$2347<span>/negotiable</span></h2>
                                     <i class="flaticon-bargain"></i>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-6">
+                            <div class="col-md-6 col-lg-6" style="display: none;">
                                 <!-- NUMBER CARD -->
                                 <div class="ad-details-number">
                                     <h2>018XXXXXXXX<span>Click to show the number</span></h2>
@@ -393,15 +328,15 @@
                             <div class="ad-details-breadcrumb">
                                 <ol class="breadcrumb">
                                     <li><span class="flat-badge sale">for sales</span></li>
-                                    <li class="breadcrumb-item"><a href="#">Property</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">house</li>
+                                    <li class="breadcrumb-item"><a href="#"><%= item.category %></a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><%= item.tag %></li>
                                 </ol>
                             </div>
                             <div class="ad-details-heading">
-                                <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit Maxime ab nesciunt dignissimos.</a></h2>
+                                <h2><a href="#"><%= item.title %></a></h2>
                             </div>
                             <ul class="ad-details-meta">
-                                <li>
+                                <li style="display: none;">
                                     <a href="#">
                                         <i class="fas fa-eye"></i>
                                         <p>preview<span>(134)</span></p>
@@ -413,7 +348,7 @@
                                         <p>click<span>(76)</span></p>
                                     </a>
                                 </li>
-                                <li>
+                                <li style="display: none;">
                                     <a href="#">
                                         <i class="fas fa-star"></i>
                                         <p>review<span>(29)</span></p>
@@ -421,28 +356,28 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-bookmark"></i>
                                         <p>bookmark<span>(15)</span></p>
                                     </a>
                                 </li>
                             </ul>
                             <div class="ad-details-slider slider-arrow">
-                                <div><img src="images/product/01.jpg" alt="details"></div>
-                                <div><img src="images/product/01.jpg" alt="details"></div>
-                                <div><img src="images/product/01.jpg" alt="details"></div>
-                                <div><img src="images/product/01.jpg" alt="details"></div>
+                                <div><img src="<%= item.path %>" alt="details"></div>
+                                <div><img src="<%= item.path %>" alt="details"></div>
+                                <div><img src="<%= item.path %>" alt="details"></div>
+                                <div><img src="<%= item.path %>" alt="details"></div>
                             </div>
                             <div class="ad-thumb-slider">
-                                <div><img src="images/product/01.jpg" alt="details"></div>
-                                <div><img src="images/product/01.jpg" alt="details"></div>
-                                <div><img src="images/product/01.jpg" alt="details"></div>
-                                <div><img src="images/product/01.jpg" alt="details"></div>
+                                <div><img src="<%= item.path %>" alt="details"></div>
+                                <div><img src="<%= item.path %>" alt="details"></div>
+                                <div><img src="<%= item.path %>" alt="details"></div>
+                                <div><img src="<%= item.path %>" alt="details"></div>
                             </div>
                             <div class="ad-details-action">
                                 <ul>
                                     <li>
                                         <button type="button">
-                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-bookmark"></i>
                                             <span>bookmark</span>
                                         </button>
                                     </li>
@@ -463,7 +398,7 @@
                         </div>
 
                         <!-- SPECIFICATION CARD -->
-                        <div class="ad-details-card">
+                        <div class="ad-details-card" style="display: none;">
                             <div class="ad-details-title">
                                 <h5>Specification</h5>
                             </div>
@@ -511,12 +446,12 @@
                                 <h5>description</h5>
                             </div>
                             <div class="ad-details-descrip">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Sunt totam necessitatibus laudantium at animi error iste cumque consequuntur soluta excepturi quo odio voluptatum voluptas omnis illum architecto ab libero obcaecati suscipit quidem nam, in maiores sed Consequatur porro totam perferendis eum. Velit quam voluptate repellat corrupti reiciendis.<span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt qui cum iure enim ut deleniti, eaque, tempore ex recusandae sunt, reprehenderit fugiat dolores nostrum sequi.</span></p>
+                                <p><%= item.desc %></span></p>
                             </div>
                         </div>
 
                         <!-- REVIEWS CARD -->
-                        <div class="ad-details-card">
+                        <div class="ad-details-card" style="display: none;">
                             <div class="ad-details-title">
                                 <h5>reviews (2)</h5>
                             </div>
@@ -527,7 +462,7 @@
                                             <div class="review-head">
                                                 <div class="review-author">
                                                     <div class="review-avatar">
-                                                        <a href="#"><img src="images/avatar/02.jpg" alt="review"></a>
+                                                        <a href="#"><img src="../images/avatar/02.jpg" alt="review"></a>
                                                     </div>
                                                     <div class="review-meta">
                                                         <h6>
@@ -553,7 +488,7 @@
                                             <div class="review-head">
                                                 <div class="review-author">
                                                     <div class="review-avatar">
-                                                        <a href="#"><img src="images/avatar/04.jpg" alt="review"></a>
+                                                        <a href="#"><img src="../images/avatar/04.jpg" alt="review"></a>
                                                     </div>
                                                     <div class="review-meta">
                                                         <h6><a href="#">Miron Mahmud</a></h6>
@@ -571,7 +506,7 @@
                                             <div class="review-head">
                                                 <div class="review-author">
                                                     <div class="review-avatar">
-                                                        <a href="#"><img src="images/avatar/03.jpg" alt="review"></a>
+                                                        <a href="#"><img src="../images/avatar/03.jpg" alt="review"></a>
                                                     </div>
                                                     <div class="review-meta">
                                                         <h6><a href="#">miron mahmud</a> - <span>June 02, 2020</span></h6>
@@ -626,45 +561,34 @@
                                 </form>
                             </div>
                         </div>
-
-                        <!-- LOCATION CARD -->
-                        <div class="ad-details-card">
-                            <div class="ad-details-title">
-                                <h5>location</h5>
-                            </div>
-                            <div class="ad-details-location">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.3406974350205!2d90.48469931445422!3d23.663771197998262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b0d5983f048d%3A0x754f30c82bcad3cd!2sJalkuri%20Bus%20Stop!5e0!3m2!1sen!2sbd!4v1610539261654!5m2!1sen!2sbd"></iframe>
-                            </div>
-                        </div>
-
-                        <div class="row">
+ <div class="row">
                             <div class="col-md-6 col-lg-6">
                                 <!-- AUTHOR CARD -->
                                 <div class="ad-details-card">
                                     <div class="ad-details-title">
-                                        <h5>author info</h5>
+                                        <h5>Donator info</h5>
                                     </div>
                                     <div class="ad-details-profile">
                                         <div class="author-img">
                                             <a href="#">
-                                                <img src="images/avatar/01.jpg" alt="avatar">
+                                                <img src="../images/avatar/01.jpg" alt="avatar">
                                                 <span class="author-status"></span>
                                             </a>
                                         </div>
                                         <div class="author-intro">
-                                            <h4><a href="#">Jackon Honson</a></h4>
+                                            <h4><a href="#"><%= item.authorName %></a></h4>
                                             <h5>new seller</h5>
                                             <p>Corporis dolore libero temporibus minus tempora quia voluptas nesciunt.</p>
                                         </div>
                                         <ul class="author-widget">
-                                            <li><a href="#"><i class="fas fa-phone-alt"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-phone-alt" style="display: none;"></i></a></li>
                                             <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-bookmark"></i></a></li>
                                             <li><a href="#"><i class="fas fa-eye"></i></a></li>
                                             <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
                                         </ul>
                                         <ul class="author-list">
-                                            <li><h6>total ads</h6><p>134</p></li>
+                                            <li><h6>total Givs</h6><p>134</p></li>
                                             <li><h6>total ratings</h6><p>78</p></li>
                                             <li><h6>bookmark</h6><p>56</p></li>
                                         </ul>
@@ -679,38 +603,35 @@
                                 <!-- OPENING CARD -->
                                 <div class="ad-details-card">
                                     <div class="ad-details-title">
-                                        <h5>opening hour</h5>
+                                        <h5>Item Specifics</h5>
                                     </div>
                                     <div class="ad-details-opening">
                                         <ul>
                                             <li>
-                                                <h6>Saturday</h6>
-                                                <p>09:00am - 05:00pm</p>
+                                                <h6>Category:</h6>
+                                                <p><%= item.category %></p>
                                             </li>
                                             <li>
-                                                <h6>Sunday</h6>
-                                                <p>09:00am - 05:00pm</p>
+                                                <h6>Type:</h6>
+                                                <p><%= item.tag %></p>
                                             </li>
                                             <li>
-                                                <h6>monday</h6>
-                                                <p>09:00am - 05:00pm</p>
+                                                <h6>Rank:</h6>
+                                                <p>A/A</p>
                                             </li>
                                             <li>
-                                                <h6>tuesday</h6>
-                                                <p>09:00am - 05:00pm</p>
+                                                <h6>Published:</h6>
+                                                <p>N/A</p>
                                             </li>
                                             <li>
-                                                <h6>wednesday</h6>
-                                                <p>09:00am - 05:00pm</p>
+                                                <h6>Condition:</h6>
+                                                <p><%= item.condition %></p>
                                             </li>
                                             <li>
-                                                <h6>thursday</h6>
-                                                <p>09:00am - 05:00pm</p>
+                                                <h6>Location:</h6>
+                                                <p>N/A</p>
                                             </li>
-                                            <li>
-                                                <h6>friday</h6>
-                                                <p>closed</p>
-                                            </li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -739,6 +660,17 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- LOCATION CARD -->
+                        <div class="ad-details-card">
+                            <div class="ad-details-title">
+                                <h5>location</h5>
+                            </div>
+                            <div class="ad-details-location">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.3406974350205!2d90.48469931445422!3d23.663771197998262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b0d5983f048d%3A0x754f30c82bcad3cd!2sJalkuri%20Bus%20Stop!5e0!3m2!1sen!2sbd!4v1610539261654!5m2!1sen!2sbd"></iframe>
+                            </div>
+                        </div>
+
+                       
                     </div>
                 </div>
             </div>
@@ -751,7 +683,7 @@
         <!--=====================================
                     RELATED PART START
         =======================================-->
-        <section class="related-part">
+        <section class="related-part" style="display: none;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -766,7 +698,7 @@
                         <div class="related-slider slider-arrow">
                             <div class="product-card">
                                 <div class="product-head">
-                                    <div class="product-img" style="background: url(images/product/01.jpg) no-repeat center; background-size: cover;">
+                                    <div class="product-img" style="background: url(../images/product/01.jpg) no-repeat center; background-size: cover;">
                                         <i class="cross-badge fas fa-bolt"></i>
                                         <span class="flat-badge booking">booking</span>
                                         <ul class="product-meta">
@@ -815,7 +747,7 @@
                             </div>
                             <div class="product-card">
                                 <div class="product-head">
-                                    <div class="product-img" style="background: url(images/product/03.jpg) no-repeat center; background-size: cover;">
+                                    <div class="product-img" style="background: url() no-repeat center; background-size: cover;">
                                         <i class="cross-badge fas fa-bolt"></i>
                                         <span class="flat-badge sale">sale</span>
                                         <ul class="product-meta">
@@ -864,7 +796,7 @@
                             </div>
                             <div class="product-card">
                                 <div class="product-head">
-                                    <div class="product-img" style="background: url(images/product/10.jpg) no-repeat center; background-size: cover;">
+                                    <div class="product-img" style="background: url(../images/product/10.jpg) no-repeat center; background-size: cover;">
                                         <i class="cross-badge fas fa-bolt"></i>
                                         <span class="flat-badge rent">rent</span>
                                         <ul class="product-meta">
@@ -913,7 +845,7 @@
                             </div>
                             <div class="product-card">
                                 <div class="product-head">
-                                    <div class="product-img" style="background: url(images/product/09.jpg) no-repeat center; background-size: cover;">
+                                    <div class="product-img" style="background: url(../images/product/09.jpg) no-repeat center; background-size: cover;">
                                         <i class="cross-badge fas fa-bolt"></i>
                                         <span class="flat-badge sale">sale</span>
                                         <ul class="product-meta">
@@ -938,7 +870,7 @@
                                             <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
                                         </ul>
                                     </div>
-                                    <div class="product-details">
+                                    <div class="product-details" style="">
                                         <div class="product-price">
                                             <h5>$900</h5>
                                             <span>/Negotiable</span>
@@ -962,7 +894,7 @@
                             </div>
                             <div class="product-card">
                                 <div class="product-head">
-                                    <div class="product-img" style="background: url(images/product/02.jpg) no-repeat center; background-size: cover;">
+                                    <div class="product-img" style="background: url(../images/product/02.jpg) no-repeat center; background-size: cover;">
                                         <i class="cross-badge fas fa-bolt"></i>
                                         <span class="flat-badge sale">sale</span>
                                         <ul class="product-meta">
@@ -1097,7 +1029,7 @@
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="footer-info">
-                            <a href="#"><img src="images/logo.png" alt="logo"></a>
+                            <a href="#"><img src="../images/logo.png" alt="logo"></a>
                             <ul class="footer-count">
                                 <li>
                                     <h5>929,238</h5>
@@ -1115,18 +1047,18 @@
                     <div class="col-lg-12">
                         <div class="footer-card-content">
                             <div class="footer-payment">
-                                <a href="#"><img src="images/pay-card/01.jpg" alt="01"></a>
-                                <a href="#"><img src="images/pay-card/02.jpg" alt="02"></a>
-                                <a href="#"><img src="images/pay-card/03.jpg" alt="03"></a>
-                                <a href="#"><img src="images/pay-card/04.jpg" alt="04"></a>
+                                <a href="#"><img src="../images/pay-card/01.jpg" alt="01"></a>
+                                <a href="#"><img src="../images/pay-card/02.jpg" alt="02"></a>
+                                <a href="#"><img src="../images/pay-card/03.jpg" alt="03"></a>
+                                <a href="#"><img src="../images/pay-card/04.jpg" alt="04"></a>
                             </div>
                             <div class="footer-option">
                                 <button type="button"><i class="fas fa-globe"></i>English</button>
                                 <button type="button"><i class="fas fa-dollar-sign"></i>USD</button>
                             </div>
                             <div class="footer-app">
-                                <a href="#"><img src="images/play-store.png" alt="play-store"></a>
-                                <a href="#"><img src="images/app-store.png" alt="app-store"></a>
+                                <a href="#"><img src="../images/play-store.png" alt="play-store"></a>
+                                <a href="#"><img src="../images/app-store.png" alt="app-store"></a>
                             </div>
                         </div>
                     </div>
@@ -1159,20 +1091,20 @@
                     JS LINK PART START
         =======================================-->
         <!-- FOR BOOTSTRAP -->
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="js/vendor/popper.min.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="../js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="../js/vendor/popper.min.js"></script>
+        <script src="../js/vendor/bootstrap.min.js"></script>
 
         <!-- FOR PRICE RANGE -->
-        <script src="js/vendor/jquery-ui.min.js"></script>
-        <script src="js/custom/price-range.js"></script>
+        <script src="../js/vendor/jquery-ui.min.js"></script>
+        <script src="../js/custom/price-range.js"></script>
 
         <!-- FOR SLICK SLIDER -->
-        <script src="js/vendor/slick.min.js"></script>
-        <script src="js/custom/slick.js"></script>
+        <script src="../js/vendor/slick.min.js"></script>
+        <script src="../js/custom/slick.js"></script>
 
         <!-- FOR INTERACTION -->
-        <script src="js/custom/main.js"></script>
+        <script src="../js/custom/main.js"></script>
         <!--=====================================
                     JS LINK PART END
         =======================================-->

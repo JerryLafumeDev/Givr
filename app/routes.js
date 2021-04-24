@@ -103,15 +103,22 @@ module.exports = function(app, db, passport, ObjectId, upload) {
     /**************************
     =====render grid-details page=====
     **************************/   
-      app.get('/grid-details', isLoggedIn, (req, res) => {
-        db.collection('posts').find().toArray((err, result) => {
+      app.get('/grid-details/:itemId', isLoggedIn, (req, res) => {
+        db.collection('posts').findOne({_id: ObjectId(req.params.itemId)}, (err, result) => {
           if(err) return console.log(err)
+          db.collection('users').find({itemID: `${result._id}`}).toArray((err2, result2)=>{
+            if(err2) return console.log(err2)
+            console.log('getting item')
+            console.log(result._id)
+            console.log(result2)
           res.render('grid-details.ejs' , {
             user: req.user,
-            posts: result
+            item: result,
+            people: result2
           })
         })
       })
+    })
     /**************************
     =====render blog-list page=====
     **************************/   
