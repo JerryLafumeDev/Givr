@@ -23,7 +23,7 @@
         =======================================-->
 
         <!-- FOR WEBPAGE TITLE -->
-        <title>Classicads - Grid Details</title>
+        <title>Givr - Let's Donate</title>
 
         <!--=====================================
                     CSS LINK PART START
@@ -76,7 +76,11 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/profile"><%=user.local.name%></a>
+                                <a href="/profile" class="header-user">
+                                    <i class="fas fa-user loggedin" style="color: rgb(255, 255, 255); background-color: rgb(219, 12, 98); height: 28px;
+                                    font-size: 12px;"></i>
+                                    <span>Welcome, <%= user.local.name.split(" ", 1).join("") %> 😊</span>
+                                </a>
                             </li>
                             <li>
                                 <button type="button" class="header-src" style="display: none;">
@@ -145,12 +149,12 @@
                             </li>
                             <li>
                                 <button class="header-message">
-                                    <i class="fas fa-envelope"></i>
+                                   <a href="/chat"><i class="fas fa-envelope"></i></a> 
                                     <sup>0</sup>
                                 </button>
                             </li>
                         </ul>
-                        <a href="ad-post.html" class="btn btn-inline">
+                        <a href="/ad-post" class="btn btn-inline">
                             <i class="fas fa-plus-circle"></i>
                             <span>post a giv</span>
                         </a>
@@ -175,9 +179,9 @@
                 </div>
                 <div class="sidebar-content">
                     <div class="sidebar-profile">
-                        <a href="#" class="sidebar-avatar"><img src="../images/avatar/01.jpg" alt="avatar"></a>
+                        <a href="/profile" class="sidebar-avatar" style="background-image: url(<%= user.local.profileImg%>);"></a>
                         <h4><a href="#" class="sidebar-name"><%= user.local.name%></a></h4>
-                        <a href="ad-post.html" class="btn btn-inline sidebar-btn">
+                        <a href="/ad-post" class="btn btn-inline sidebar-btn">
                             <i class="fas fa-plus-circle"></i>
                             <span>post a giv</span>
                         </a>
@@ -194,7 +198,7 @@
                                 <li class="navbar-item"><a class="navbar-link" href="/feed">Home</a></li>
                                 <li class="navbar-item"><a class="navbar-link" href="/profile">Profile</a></li>
                                 <li class="navbar-item"><a class="navbar-link" href="/ad-post">Post a Giv</a></li>
-                                <li class="navbar-item"><a class="navbar-link" href="my-ads.html">My Givs</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/my-ads">My Givs</a></li>
                                 <li class="navbar-item"><a class="navbar-link" href="/setting">Settings</a></li>
                                 <li class="navbar-item navbar-dropdown">
                                     <a class="navbar-link" href="bookmark.html">
@@ -203,7 +207,7 @@
                                     </a>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
+                                    <a class="navbar-link" href="/chat">
                                         <span>Message</span>
                                         <span>0</span>
                                     </a>
@@ -214,7 +218,7 @@
                                         <span>0</span>
                                     </a>
                                 </li>
-                                <li class="navbar-item"><a class="navbar-link" href="user-form.html">Logout</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -238,7 +242,7 @@
             <div class="container">
                 <ul class="btmbar-widget">
                     <li>
-                        <a href="user-form.html">
+                        <a href="/">
                             <i class="fas fa-user"></i>
                         </a>
                     </li>
@@ -249,7 +253,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="plus-btn" href="ad-post.html">
+                        <a class="plus-btn" href="/ad-post">
                             <i class="fas fa-plus"></i>
                             <span>Ad Your Post</span>
                         </a>
@@ -285,7 +289,7 @@
                             <h2>Item details</h2>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/feed">Home</a></li>
-                                <li class="breadcrumb-item" style="display: none;"><a href="grid-list.html">grid list</a></li>
+                                <li class="breadcrumb-item" style="display: none;"><a href="">grid list</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Item details</li>
                             </ol>
                         </div>
@@ -327,7 +331,7 @@
                         <div class="ad-details-card">
                             <div class="ad-details-breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li><span class="flat-badge sale">for sales</span></li>
+                                    <li><span class="flat-badge <%= item.rank %>"><%= item.rank %></span></li>
                                     <li class="breadcrumb-item"><a href="#"><%= item.category %></a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><%= item.tag %></li>
                                 </ol>
@@ -339,13 +343,13 @@
                                 <li style="display: none;">
                                     <a href="#">
                                         <i class="fas fa-eye"></i>
-                                        <p>preview<span>(134)</span></p>
+                                        <p>bookmarks<span>(<%= item.bookmarks%>)</span></p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fas fa-mouse"></i>
-                                        <p>click<span>(76)</span></p>
+                                        <i class="fas fa-eye"></i>
+                                        <p>Views<span>(<%= item.clicks%>)</span></p>
                                     </a>
                                 </li>
                                 <li style="display: none;">
@@ -357,7 +361,7 @@
                                 <li>
                                     <a href="#">
                                         <i class="fas fa-bookmark"></i>
-                                        <p>bookmark<span>(15)</span></p>
+                                        <p>bookmark<span>(<%= item.bookmarks%>)</span></p>
                                     </a>
                                 </li>
                             </ul>
@@ -571,30 +575,29 @@
                                     <div class="ad-details-profile">
                                         <div class="author-img">
                                             <a href="#">
-                                                <img src="../images/avatar/01.jpg" alt="avatar">
+                                                <img src="<%= people[0].local.profileImg %>" alt="avatar">
                                                 <span class="author-status"></span>
                                             </a>
                                         </div>
                                         <div class="author-intro">
                                             <h4><a href="#"><%= item.authorName %></a></h4>
-                                            <h5>new seller</h5>
-                                            <p>Corporis dolore libero temporibus minus tempora quia voluptas nesciunt.</p>
+                                            <h5><%=people[0].local.rank%></h5>
+                                            <p><%=people[0].local.status%></p>
                                         </div>
                                         <ul class="author-widget">
                                             <li><a href="#"><i class="fas fa-phone-alt" style="display: none;"></i></a></li>
                                             <li><a href="#"><i class="fas fa-envelope"></i></a></li>
                                             <li><a href="#"><i class="fas fa-bookmark"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-gift"></i></a></li>
                                         </ul>
                                         <ul class="author-list">
                                             <li><h6>total Givs</h6><p>134</p></li>
-                                            <li><h6>total ratings</h6><p>78</p></li>
-                                            <li><h6>bookmark</h6><p>56</p></li>
+                                            <li><h6>Current Givs</h6><p>78</p></li>
+                                            <li><h6>Points</h6><p>56</p></li>
                                         </ul>
                                         <div class="author-details">
-                                            <h6>joined: february 02, 2021</h6>
-                                            <h6>address: jalkuri, Narayanganj</h6>
+                                            <h6>joined: <%=people[0].local.accountDate%></h6>
+                                            <h6>Area: <%=people[0].local.city%>, <%=people[0].local.state%></h6>
                                         </div>
                                     </div>
                                 </div>
@@ -617,7 +620,7 @@
                                             </li>
                                             <li>
                                                 <h6>Rank:</h6>
-                                                <p>A/A</p>
+                                                <p><%= item.rank %></p>
                                             </li>
                                             <li>
                                                 <h6>Published:</h6>
@@ -629,7 +632,7 @@
                                             </li>
                                             <li>
                                                 <h6>Location:</h6>
-                                                <p>N/A</p>
+                                                <p><%=people[0].local.city%>, <%=people[0].local.state%></p>
                                             </li>
 
                                         </ul>
@@ -666,7 +669,8 @@
                                 <h5>location</h5>
                             </div>
                             <div class="ad-details-location">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.3406974350205!2d90.48469931445422!3d23.663771197998262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b0d5983f048d%3A0x754f30c82bcad3cd!2sJalkuri%20Bus%20Stop!5e0!3m2!1sen!2sbd!4v1610539261654!5m2!1sen!2sbd"></iframe>
+                                <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20<%=people[0].local.city%>,%20<%=people[0].local.state%>+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.3406974350205!2d90.48469931445422!3d23.663771197998262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b0d5983f048d%3A0x754f30c82bcad3cd!2sJalkuri%20Bus%20Stop!5e0!3m2!1sen!2sbd!4v1610539261654!5m2!1sen!2sbd"></iframe> -->
                             </div>
                         </div>
 
@@ -717,7 +721,7 @@
                                         </ol>
                                     </div>
                                     <div class="product-title">
-                                        <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                        <h5><a href="">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
                                         <ul class="product-location">
                                             <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
                                             <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
@@ -766,7 +770,7 @@
                                         </ol>
                                     </div>
                                     <div class="product-title">
-                                        <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                        <h5><a href="">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
                                         <ul class="product-location">
                                             <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
                                             <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>
@@ -815,7 +819,7 @@
                                         </ol>
                                     </div>
                                     <div class="product-title">
-                                        <h5><a href="rightbar-details.html">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
+                                        <h5><a href="">Lorem ipsum dolor sit amet consect adipisicing elit</a></h5>
                                         <ul class="product-location">
                                             <li><i class="fas fa-map-marker-alt"></i><p>Uttara, Dhaka</p></li>
                                             <li><i class="fas fa-clock"></i><p>30 min ago!</p></li>

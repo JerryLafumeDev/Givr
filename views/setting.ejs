@@ -67,9 +67,10 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="user-form.html" class="header-user">
-                                    <i class="fas fa-user"></i>
-                                    <span>Login</span>
+                                <a href="/profile" class="header-user">
+                                    <i class="fas fa-user loggedin" style="color: rgb(255, 255, 255); background-color: rgb(219, 12, 98); height: 28px;
+                                    font-size: 12px;"></i>
+                                    <span>Welcome, <%= user.local.name.split(" ", 1).join("") %> 😊</span>
                                 </a>
                             </li>
                             <li>
@@ -139,12 +140,12 @@
                             </li>
                             <li>
                                 <button class="header-message">
-                                    <i class="fas fa-envelope"></i>
+                                   <a href="/chat"><i class="fas fa-envelope"></i></a> 
                                     <sup>0</sup>
                                 </button>
                             </li>
                         </ul>
-                        <a href="ad-post.html" class="btn btn-inline">
+                        <a href="/ad-post" class="btn btn-inline">
                             <i class="fas fa-plus-circle"></i>
                             <span>post a giv</span>
                         </a>
@@ -169,9 +170,9 @@
                 </div>
                 <div class="sidebar-content">
                     <div class="sidebar-profile">
-                        <a href="#" class="sidebar-avatar"><img src="<%= user.local.profileImg%>" alt="avatar"></a>
+                        <a href="/profile" class="sidebar-avatar" style="background-image: url(<%= user.local.profileImg%>);"></a>
                         <h4><a href="#" class="sidebar-name"><%= user.local.name%></a></h4>
-                        <a href="ad-post.html" class="btn btn-inline sidebar-btn">
+                        <a href="/ad-post" class="btn btn-inline sidebar-btn">
                             <i class="fas fa-plus-circle"></i>
                             <span>post a giv</span>
                         </a>
@@ -185,8 +186,8 @@
                             <ul class="navbar-list">
                                 <li class="navbar-item"><a class="navbar-link" href="/feed">Home</a></li>
                                 <li class="navbar-item"><a class="navbar-link" href="/profile">Profile</a></li>
-                                <li class="navbar-item"><a class="navbar-link" href="ad-post.html">Giv Post</a></li>
-                                <li class="navbar-item"><a class="navbar-link" href="my-ads.html">My Givs</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/ad-post">Giv Post</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/my-ads">My Givs</a></li>
                                 <li class="navbar-item"><a class="navbar-link" href="/setting">Settings</a></li>
                                 <li class="navbar-item navbar-dropdown">
                                     <a class="navbar-link" href="bookmark.html">
@@ -195,7 +196,7 @@
                                     </a>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
+                                    <a class="navbar-link" href="/chat">
                                         <span>Message</span>
                                         <span>0</span>
                                     </a>
@@ -206,7 +207,7 @@
                                         <span>0</span>
                                     </a>
                                 </li>
-                                <li class="navbar-item"><a class="navbar-link" href="user-form.html">Logout</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -230,7 +231,7 @@
             <div class="container">
                 <ul class="btmbar-widget">
                     <li>
-                        <a href="user-form.html">
+                        <a href="/">
                             <i class="fas fa-user"></i>
                         </a>
                     </li>
@@ -241,7 +242,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="plus-btn" href="ad-post.html">
+                        <a class="plus-btn" href="/ad-post">
                             <i class="fas fa-plus"></i>
                             <span>Ad Your Post</span>
                         </a>
@@ -299,15 +300,18 @@
                         <div class="col-lg-5">
                             <div class="dash-header-left">
                                 <div class="dash-avatar">
-                                    <a href="#"><img src="images/avatar/01.jpg" alt="avatar"></a>
+                                    <a href="/profile" class="sidebar-avatar" style="background-image: url(<%= user.local.profileImg%>);"></a>
                                 </div>
                                 <div class="dash-intro">
                                     <h4><a href="#"><%= user.local.name %></a></h4>
-                                    <h5>new seller</h5>
                                     <ul class="dash-meta">
-                                        <li>
-                                            <i class="fas fa-phone-alt"></i>
-                                            <span>(123) 000-1234</span>
+                                        <li >
+                                            <i class="fas fa-medal"></i>
+                                            <span><%= user.local.rank%></span>
+                                        </li>
+                                        <li >
+                                            <i class="fas fa-building"></i>
+                                            <span><%= user.local.company%></span>
                                         </li>
                                         <li>
                                             <i class="fas fa-envelope"></i>
@@ -315,7 +319,7 @@
                                         </li>
                                         <li>
                                             <i class="fas fa-map-marker-alt"></i>
-                                            <span>Los Angeles, West America</span>
+                                            <span><%= user.local.state %>, <%= user.local.city %></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -350,15 +354,15 @@
                         <div class="col-lg-12">
                             <div class="dash-menu-list">
                                 <ul>
-                                    <li><a href="dashboard.html">dashboard</a></li>
+                                    <li><a href="/dashboard">Home</a></li>
                                     <li><a href="/profile">Profile</a></li>
                                     <li><a href="ad-post.html">ad post</a></li>
                                     <li><a href="my-ads.html">my ads</a></li>
                                     <li><a class="active" href="/setting">settings</a></li>
                                     <li><a href="bookmark.html">bookmarks</a></li>
-                                    <li><a href="#">message</a></li>
+                                    <li><a href="/chat">message</a></li>
                                     <li><a href="#">notification</a></li>
-                                    <li><a href="user-form.html">logout</a></li>
+                                    <li><a href="/">logout</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -383,82 +387,137 @@
                                 <h3>Edit Profile</h3>
                                 <button data-dismiss="alert">close</button>
                             </div>
-                            <form class="setting-form" action="/updateProfile" method="put">
+                            <form class="setting-form" action="/update" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label class="form-label">First Name</label>
-                                            <input type="text" class="form-control" placeholder="Mahmudul">
+                                            <label class="form-label">Name</label>
+                                            <input type="text" class="form-control" placeholder="Brain Mcgivr" name="name">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label class="form-label">Last Name</label>
-                                            <input type="text" class="form-control" placeholder="Hasan">
+                                            <label class="form-label">email</label>
+                                            <input type="text" class="form-control" placeholder="brian.mcgrivr@givrUSA.com" name="email">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="form-label">Company</label>
-                                            <input type="text" class="form-control" placeholder="Classicads Advertising LID.">
+                                            <input type="text" class="form-control" placeholder="Classicads Advertising LID." name="company">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label class="form-label">Address</label>
-                                            <input type="text" class="form-control" placeholder="1420, West Jalkuri, Narayanganj, Bangladesh">
+                                            <label class="form-label">Street Address</label>
+                                            <input type="text" class="form-control" placeholder="1000, West Main St, Boston, MA" name="street">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">City</label>
-                                            <input type="text" class="form-control" placeholder="Narayanganj">
+                                            <input type="text" class="form-control" placeholder="Boston" name="city">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">State</label>
-                                            <input type="text" class="form-control" placeholder="West Jalkuri">
+                                            <select name="state" class="form-control">
+                                                <option value="N/A" disabled selected>Select State</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AK">Alaska</option>
+                                                <option value="AZ">Arizona</option>
+                                                <option value="AR">Arkansas</option>
+                                                <option value="CA">California</option>
+                                                <option value="CO">Colorado</option>
+                                                <option value="CT">Connecticut</option>
+                                                <option value="DE">Delaware</option>
+                                                <option value="DC">District Of Columbia</option>
+                                                <option value="FL">Florida</option>
+                                                <option value="GA">Georgia</option>
+                                                <option value="HI">Hawaii</option>
+                                                <option value="ID">Idaho</option>
+                                                <option value="IL">Illinois</option>
+                                                <option value="IN">Indiana</option>
+                                                <option value="IA">Iowa</option>
+                                                <option value="KS">Kansas</option>
+                                                <option value="KY">Kentucky</option>
+                                                <option value="LA">Louisiana</option>
+                                                <option value="ME">Maine</option>
+                                                <option value="MD">Maryland</option>
+                                                <option value="MA">Massachusetts</option>
+                                                <option value="MI">Michigan</option>
+                                                <option value="MN">Minnesota</option>
+                                                <option value="MS">Mississippi</option>
+                                                <option value="MO">Missouri</option>
+                                                <option value="MT">Montana</option>
+                                                <option value="NE">Nebraska</option>
+                                                <option value="NV">Nevada</option>
+                                                <option value="NH">New Hampshire</option>
+                                                <option value="NJ">New Jersey</option>
+                                                <option value="NM">New Mexico</option>
+                                                <option value="NY">New York</option>
+                                                <option value="NC">North Carolina</option>
+                                                <option value="ND">North Dakota</option>
+                                                <option value="NMI">Northern Marianas Islands</option>
+                                                <option value="OH">Ohio</option>
+                                                <option value="OK">Oklahoma</option>
+                                                <option value="OR">Oregon</option>
+                                                <option value="PA">Pennsylvania</option>
+                                                <option value="PR">Puerto Rico</option>
+                                                <option value="RI">Rhode Island</option>
+                                                <option value="SC">South Carolina</option>
+                                                <option value="SD">South Dakota</option>
+                                                <option value="TN">Tennessee</option>
+                                                <option value="TX">Texas</option>
+                                                <option value="UT">Utah</option>
+                                                <option value="VT">Vermont</option>
+                                                <option value="VA">Virginia</option>
+                                                <option value="WA">Washington</option>
+                                                <option value="WV">West Virginia</option>
+                                                <option value="WI">Wisconsin</option>
+                                                <option value="WY">Wyoming</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">Post Code</label>
-                                            <input type="text" class="form-control" placeholder="1420">
+                                            <input type="text" class="form-control" placeholder="02127" name="code">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">Country</label>
-                                            <input type="text" class="form-control" placeholder="Bangladesh">
+                                            <input type="text" class="form-control" placeholder="USA" name="country">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">Website</label>
-                                            <input type="text" class="form-control" placeholder="https://mironmahmud.com">
+                                            <input type="text" class="form-control" placeholder="https://Givr.com" name="website">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">Phone</label>
-                                            <input type="text" class="form-control" placeholder="+8801838288389">
+                                            <input type="tel" class="form-control" placeholder="708-555-1000" name="phone">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">Birthday</label>
-                                            <input type="date" class="form-control" value="1995-02-02">
+                                            <input type="date" class="form-control" value="1995-02-02" name="birthday">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">Profile Image</label>
-                                            <input type="file" class="form-control">
+                                            <input type="file" class="form-control" name="profileImg" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <button class="btn btn-inline">
+                                        <button class="btn btn-inline" type="submit">
                                             <i class="fas fa-user-check"></i>
                                             <span>update profile</span>
                                         </button>

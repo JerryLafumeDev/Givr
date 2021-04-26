@@ -23,7 +23,7 @@
         =======================================-->
 
         <!-- FOR WEBPAGE TITLE -->
-        <title>Classicads - Profile</title>
+        <title>Givr - Lets Donate!</title>
 
         <!--=====================================
                     CSS LINK PART START
@@ -67,7 +67,11 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/profile"><%=user.local.name%></a>
+                                <a href="/profile" class="header-user">
+                                    <i class="fas fa-user loggedin" style="color: rgb(255, 255, 255); background-color: rgb(219, 12, 98); height: 28px;
+                                    font-size: 12px;"></i>
+                                    <span>Welcome, <%= user.local.name.split(" ", 1).join("") %> 😊</span>
+                                </a>
                             </li>
                             <li>
                                 <button type="button" class="header-src">
@@ -136,14 +140,14 @@
                             </li>
                             <li>
                                 <button class="header-message">
-                                    <i class="fas fa-envelope"></i>
+                                    <a href="/chat"><i class="fas fa-envelope"></i></a>
                                     <sup>0</sup>
                                 </button>
                             </li>
                         </ul>
-                        <a href="ad-post.html" class="btn btn-inline">
+                        <a href="/ad-post" class="btn btn-inline">
                             <i class="fas fa-plus-circle"></i>
-                            <span>post your ad</span>
+                            <span>post a giv</span>
                         </a>
                     </div>
                     
@@ -166,9 +170,9 @@
                 </div>
                 <div class="sidebar-content">
                     <div class="sidebar-profile">
-                        <a href="#" class="sidebar-avatar"><img src="<%= user.local.profileImg %>" alt="avatar"></a>
+                        <a href="/profile" class="sidebar-avatar" style="background-image: url(<%= user.local.profileImg%>);"></a>
                         <h4><a href="#" class="sidebar-name"><%= user.local.name %></a></h4>
-                        <a href="ad-post.html" class="btn btn-inline sidebar-btn">
+                        <a href="/ad-post" class="btn btn-inline sidebar-btn">
                             <i class="fas fa-plus-circle"></i>
                             <span>post a giv</span>
                         </a>
@@ -183,7 +187,7 @@
                                 <li class="navbar-item"><a class="navbar-link" href="/feed">Home</a></li>
                                 <li class="navbar-item"><a class="navbar-link" href="/profile">Profile</a></li>
                                 <li class="navbar-item"><a class="navbar-link" href="/ad-post">Giv Post</a></li>
-                                <li class="navbar-item"><a class="navbar-link" href="my-ads.html">My Givs</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/my-ads">My Givs</a></li>
                                 <li class="navbar-item"><a class="navbar-link" href="/setting">Settings</a></li>
                                 <li class="navbar-item navbar-dropdown">
                                     <a class="navbar-link" href="bookmark.html">
@@ -192,7 +196,7 @@
                                     </a>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
+                                    <a class="navbar-link" href="/chat">
                                         <span>Message</span>
                                         <span>0</span>
                                     </a>
@@ -296,15 +300,18 @@
                         <div class="col-lg-5">
                             <div class="dash-header-left">
                                 <div class="dash-avatar">
-                                    <a href="#"><img src="<%= user.local.profileImg%>" alt="avatar"></a>
+                                    <a href="/profile" class="sidebar-avatar" style="background-image: url(<%= user.local.profileImg%>);"></a>
                                 </div>
                                 <div class="dash-intro">
                                     <h4><a href="/profile"><%= user.local.name%></a></h4>
-                                    <h5>new seller</h5>
                                     <ul class="dash-meta">
-                                        <li style="display: none;">
-                                            <i class="fas fa-phone-alt"></i>
-                                            <span>(123) 000-1234</span>
+                                        <li >
+                                            <i class="fas fa-medal"></i>
+                                            <span><%= user.local.rank%></span>
+                                        </li>
+                                        <li >
+                                            <i class="fas fa-building"></i>
+                                            <span><%= user.local.company%></span>
                                         </li>
                                         <li>
                                             <i class="fas fa-envelope"></i>
@@ -312,7 +319,7 @@
                                         </li>
                                         <li>
                                             <i class="fas fa-map-marker-alt"></i>
-                                            <span>Los Angeles, West America</span>
+                                            <span><%= user.local.state %>, <%= user.local.city %></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -347,13 +354,13 @@
                         <div class="col-lg-12">
                             <div class="dash-menu-list">
                                 <ul>
-                                    <li><a href="dashboard.html">dashboard</a></li>
-                                    <li><a class="active" href="profile.html">Profile</a></li>
-                                    <li><a href="ad-post.html">ad post</a></li>
-                                    <li><a href="my-ads.html">my ads</a></li>
+                                    <li><a href="/feed">Home</a></li>
+                                    <li><a class="active" href="/profile">Profile</a></li>
+                                    <li><a href="/ad-post">ad post</a></li>
+                                    <li><a href="/my-ads">my ads</a></li>
                                     <li><a href="/setting">settings</a></li>
-                                    <li><a href="bookmark.html">bookmarks</a></li>
-                                    <li><a href="#">message</a></li>
+                                    <li><a href="/bookmark">bookmarks</a></li>
+                                    <li><a href="/chat">message</a></li>
                                     <li><a href="#">notification</a></li>
                                     <li><a href="/">logout</a></li>
                                 </ul>
@@ -377,14 +384,14 @@
                     <div class="col-lg-6">
                         <div class="account-card">
                             <div class="account-title">
-                                <h3>Membership</h3>
-                                <a href="/setting">Edit</a>
+                                <h3>Account</h3>
+                                <a href="/setting"></a>
                             </div>
                             <ul class="account-card-list">
-                                <li><h5>Status</h5><p>Premium</p></li>
-                                <li><h5>Joined</h5><p>February 02, 2021</p></li>
-                                <li><h5>Spand</h5><p>4,587</p></li>
-                                <li><h5>Earn</h5><p>97,325</p></li>
+                                <li><h5>Rank</h5><p><%= user.local.rank%></p></li>
+                                <li><h5>Joined</h5><p><%= user.local.accountDate%></p></li>
+                                <li><h5>Points</h5><p><%= user.local.points%></p></li>
+                                <li><h5>Total Givs</h5><p>2</p></li>
                             </ul>
                         </div>
                         <div class="account-card">
@@ -393,10 +400,10 @@
                                 <a href="/setting">Edit</a>
                             </div>
                             <ul class="account-card-list">
-                                <li><h5>Website:</h5><p>www.richardwilliam.com</p></li>
-                                <li><h5>Email:</h5><p>richard@example.com</p></li>
-                                <li><h5>Phone:</h5><p>+12027953213</p></li>
-                                <li><h5>Skype:</h5><p>live:richard</p></li>
+                                <li><h5>Website:</h5><p><%= user.local.website%></p></li>
+                                <li><h5>Email:</h5><p><%= user.local.email%></p></li>
+                                <li><h5>Phone:</h5><p><%= user.local.phone%></p></li>
+                                <li><h5>Company:</h5><p><%= user.local.company%></p></li>
                             </ul>
                         </div>
                     </div>
@@ -407,10 +414,10 @@
                                 <a href="/setting">Edit</a>
                             </div>
                             <ul class="account-card-list">
-                                <li><h5>Post Code:</h5><p>1420</p></li>
-                                <li><h5>State:</h5><p>West Jalkuri</p></li>
-                                <li><h5>City:</h5><p>Narayanganj</p></li>
-                                <li><h5>Country:</h5><p>Bangladesh</p></li>
+                                <li><h5>Post Code:</h5><p><%= user.local.code%></p></li>
+                                <li><h5>City:</h5><p><%= user.local.city%></p></li>
+                                <li><h5>State:</h5><p><%= user.local.state%></p></li>
+                                <li><h5>Country:</h5><p><%= user.local.country%></p></li>
                             </ul>
                         </div>
                         <div class="account-card">
@@ -419,10 +426,10 @@
                                 <a href="/setting">Edit</a>
                             </div>
                             <ul class="account-card-list">
-                                <li><h5>Post Code:</h5><p>1100</p></li>
-                                <li><h5>State:</h5><p>Kawran Bazar</p></li>
-                                <li><h5>City:</h5><p>Dhaka</p></li>
-                                <li><h5>Country:</h5><p>Bangladesh</p></li>
+                                <li><h5>Post Code:</h5><p><%= user.local.code%></p></li>
+                                <li><h5>State:</h5><p><%= user.local.state%></p></li>
+                                <li><h5>City:</h5><p><%= user.local.city%></p></li>
+                                <li><h5>Country:</h5><p><%= user.local.country%></p></li>
                             </ul>
                         </div>
                     </div>

@@ -168,17 +168,26 @@
 /*=====================================
         CARD BADGE COMPONENT STYLE
 ======================================*/
-.sale {
-  background: var(--sale);
+.Trivials {
+  background:  rgb(15, 199, 15);
 }
 
-.rent {
-  background: var(--rent);
+.Essentials {
+  background: rgb(41, 149, 211);
 }
 
-.booking {
+.Devices {
   background: var(--booking);
 }
+
+.Semi-Limited {
+  background: orange;
+}
+
+.Limited {
+  background: red;
+}
+
 
 .flat-badge {
   color: var(--white);

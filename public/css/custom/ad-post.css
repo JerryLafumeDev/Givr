@@ -13,15 +13,26 @@
         CARD BADGE COMPONENT STYLE
 ======================================*/
 .sale {
-  background: var(--sale);
+  background: rgb(15, 199, 15);
 }
 
 .rent {
-  background: var(--rent);
+  background: rgb(41, 149, 211);
 }
 
 .booking {
   background: var(--booking);
+}
+.Services {
+  background: rgb(25, 216, 184);
+}
+
+.semi {
+  background: orange;
+}
+
+.limi {
+  background: red;
 }
 
 .flat-badge {

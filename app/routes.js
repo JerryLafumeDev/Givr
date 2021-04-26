@@ -1,7 +1,3 @@
-
-
-
-
 module.exports = function(app, db, passport, ObjectId, upload) {
 
 
@@ -65,6 +61,18 @@ module.exports = function(app, db, passport, ObjectId, upload) {
         })
       })
     /**************************
+    =====render chat page=====
+    **************************/
+      app.get('/chat', isLoggedIn, (req, res) => {
+        db.collection('posts').find().toArray((err, result) => {
+          if(err) return console.log(err)
+          res.render('chat.ejs' , {
+            user: req.user,
+            posts: result
+          })
+        })
+      })
+    /**************************
     =====render settings page=====
     **************************/    
       app.get('/setting', isLoggedIn, (req, res) => {
@@ -101,12 +109,24 @@ module.exports = function(app, db, passport, ObjectId, upload) {
         })
       })
     /**************************
+    =====render bookmark page=====
+    **************************/   
+      app.get('/bookmark', isLoggedIn, (req, res) => {
+        db.collection('posts').find().toArray((err, result) => {
+          if(err) return console.log(err)
+          res.render('bookmark.ejs' , {
+            user: req.user,
+            posts: result
+          })
+        })
+      })
+    /**************************
     =====render grid-details page=====
     **************************/   
       app.get('/grid-details/:itemId', isLoggedIn, (req, res) => {
         db.collection('posts').findOne({_id: ObjectId(req.params.itemId)}, (err, result) => {
           if(err) return console.log(err)
-          db.collection('users').find({itemID: `${result._id}`}).toArray((err2, result2)=>{
+          db.collection('users').find({_id: ObjectId(result.authorID)}).toArray((err2, result2)=>{
             if(err2) return console.log(err2)
             console.log('getting item')
             console.log(result._id)
@@ -157,57 +177,102 @@ module.exports = function(app, db, passport, ObjectId, upload) {
           message: req.flash('signupMessage')
         })
       })
+
+      /**************************
+      =====Save Chat Messages=====
+      **************************/
+      app.post('/DM' , isLoggedIn,(req,res) => {
+
+        console.log(req.body.text)
+        var today = new Date();
+        db.collection('chat').insertOne({
+          sender: req.user.local.name,
+          senderID: req.user._id,
+          reciever: "unknown for now",
+          message: "trying to find",
+          timeSent: today.getHours() + ":" + today.getMinutes(),
+          dateSent: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
+        }, (err, result) => {
+          if (err){console.log(err)
+            return res.status(500).send({
+              message: 'This is an error!'
+            })
+          } else {
+            return res.redirect('/chat')
+          }
+        })
+      })
   
     /**************************
       =====UPLOAD PROFILE PICTURE=====
       **************************/
+      const trail = require('path');
+      const util = require('util');
 
-      // app.post('/uploadAvi', profileUpload.single('file'),(req, res) => {
-      //   if (req.files) {
-      //     console.log(req.files);
-      //     let file = req.files.file
-      //     let fileName = file.name
-      //     console.log(fileName);
-      //     file.mv('uploads/' + fileName, function(err) {
-      //       if (err) {
-      //         res.send(err)
-      //       } else {
-      //         res.redirect('/feed')
-      //         // res.send("File Uploaded")
-      //       }
-      //     })
-      //     let profileImg ="../uploads/" + fileName
-      //     db.collection('users').findOneAndUpdate({
-      //       _id: ObjectId(req.user._id)
-           
-      //     }, {          
-      //      $set:{
-      //     local: {
-      //       profileImg,
-      //     },
-      //     __v: 0
-          
-      //     } 
-            
-      //     }, {
-      //       // if profile cant be found it would create a new profile which is why we set it to false
-      //       upsert: true
-      //     }, (err, result) => {
-      //       if (err) return console.log(err)
-      //       console.log('saved to database')
-      //     })
-      //   }
-      // })
-  
+      app.post('/update', isLoggedIn, async (req,res) => {
+        try{
+          console.log(req.files.profileImg.name)
+          const {profileImg} = req.files;
+          console.log(profileImg)
+          const fileName = profileImg.name;
+          const size = profileImg.data.length;
+          const extension = trail.extname(fileName);
+          const allowedExt = /png|jpeg|jpg|gif|JPG/;
+
+          if(!allowedExt.test(extension)) throw "Unsupported file type!";
+
+          const md5 = profileImg.md5;
+          const URL = "/avis/" + md5  + size + extension;
+
+          await util.promisify(profileImg.mv)('./public' + URL );
+
+          res.redirect('/profile')
+          } catch(err){
+            console.log(err);
+            res.status(500).json({
+              message: err,
+            })
+          }
+            db.collection('users').findOneAndUpdate(
+              {
+                _id: ObjectId(req.user._id)
+              },{
+                $set:{
+                local: {
+                  name :  req.body.name,
+                  company: req.body.company,
+                  street: req.body.street,
+                  city: req.body.city,
+                  state: req.body.state,
+                  code: req.body.code,
+                  country: req.body.country,
+                  website: req.body.website,
+                  phone: req.body.phone,
+                  birthday: req.body.birthday,
+                  email : req.body.email,
+                  password: req.user.local.password,
+                  profileImg: "/avis/" + req.files.profileImg.md5 + req.files.profileImg.size + trail.extname(req.files.profileImg.name),
+                  accountDate: req.user.accountDate
+                },
+                __v: 0
+              } 
+            }, {
+              upsert: false
+            }, 
+                (err, result) => {
+                  if (err) return console.log(err)
+                  console.log('saved to database')
+                })
+         })
+    
+    
   
   
       /**************************
       =====CREATE POST=====
       **************************/
-     const trail = require('path');
-     const util = require('util');
   
-      app.post('/newPost', async (req,res) => {
+      app.post('/newPost', isLoggedIn, async (req,res) => {
         try{
           console.log(req.files.myImage.name)
           const {myImage} = req.files;
@@ -239,45 +304,50 @@ module.exports = function(app, db, passport, ObjectId, upload) {
             desc: req.body.desc,
             category: req.body.category,
             tag:  req.body.tag,
-            condition: req.body.condition
+            condition: req.body.condition,
+            rank: req.body.rank,
+            city: req.user.local.city,
+            state: req.user.local.state,
+            clicks: 0,
+            bookmarks: 0
           })
           console.log(req.files.myImage.md5)
       })
-  
-    // app.post('/newPost', upload.single('myImage'),(req, res) => {
-    //   if(req.files){
-    //     console.log(req.files)
-    //     const {myImage} = req.files
-    //     // var image = Object.keys(req.files)[0]
-    //     console.log(myImage)
-    //     var fileName = myImage.name
-    //     console.log(fileName)
-        
 
-    //     myImage.mv('public/uploads/'+fileName, function (err){
-    //       if (err) {
-    //         res.send(err)
-    //       }else{
-    //         res.redirect('/feed')
-    //       }
-    //     })
-    //        db.collection('posts').insertOne({
-    //         title: req.body.title,
-    //         authorName: req.user.local.name,
-    //         authorID: req.user._id,
-    //         path: 'uploads/'+fileName,
-    //         desc: req.body.desc,
-    //         category: req.body.category,
-    //         tag:  req.body.tag,
-    //         condition: req.body.condition
-    //     }, (err, res) => {
-    //       if (err) return console.log(err)
-    //       console.log('saved to database')
-    //     })
-    //   }
+     /**************************
+      =====record title clicks=====
+      **************************/
 
-    // })
+        // add a document to the DB collection recording the click event
+        app.post('/clicked', (req, res) => {
+          const click = {clickTime: new Date()};
+          console.log(req.body)
+          console.log(click)
 
+          db.collection('posts').findOneAndUpdate(
+          {
+            title: req.body.title
+          },{
+            $set:{
+                clicks: Number(req.body.clicks) + 1,
+          } 
+        }, {
+          upsert: false
+        }, 
+            (err, result) => {
+              if (err) return console.log(err)
+              console.log('saved to database')
+            });
+        });
+      
+
+        // get the click data from the database
+        app.get('/clicks', (req, res) => {
+          db.collection('posts').find().toArray((err, result) => {
+            if (err) return console.log(err);
+            res.send(result);
+          });
+        });
 
 
 

@@ -19,6 +19,8 @@ var storage = multer.diskStorage({
 var upload = multer({storage: storage})
 var express = require('express')
 var app     = express()
+var http = require('http').Server(app)
+var io = require('socket.io')(http)
 
 require('dotenv').config()
 const fileUpload = require('express-fileupload')
@@ -81,5 +83,15 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 // launch ======================================================================
-app.listen(PORT);
-console.log('The magic happens on port ' + PORT);
+http.listen(PORT);
+console.log('Your project is on port ' + PORT);
+
+
+// socket.io connecting
+io.on('connection', function(socket){
+  console.log('client is connected' + socket.id)
+
+  socket.on('userMessage', (data) => {
+    io.emit('userMessage', data)
+  })
+})

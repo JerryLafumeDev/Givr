@@ -67,7 +67,11 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/profile"><%=user.local.name%></a>
+                                <a href="/profile" class="header-user">
+                                    <i class="fas fa-user loggedin" style="color: rgb(255, 255, 255); background-color: rgb(219, 12, 98); height: 28px;
+                                    font-size: 12px;"></i>
+                                    <span>Welcome, <%= user.local.name.split(" ", 1).join("") %> 😊</span>
+                                </a>
                             </li>
                             <li>
                                 <button type="button" class="header-src" style="display: none;">
@@ -136,12 +140,12 @@
                             </li>
                             <li>
                                 <button class="header-message">
-                                    <i class="fas fa-envelope"></i>
+                                    <a href="/chat"><i class="fas fa-envelope"></i></a>
                                     <sup>0</sup>
                                 </button>
                             </li>
                         </ul>
-                        <a href="ad-post.html" class="btn btn-inline">
+                        <a href="/ad-post" class="btn btn-inline">
                             <i class="fas fa-plus-circle"></i>
                             <span>post your ad</span>
                         </a>
@@ -166,9 +170,9 @@
                 </div>
                 <div class="sidebar-content">
                     <div class="sidebar-profile">
-                        <a href="#" class="sidebar-avatar"><img src="images/avatar/01.jpg" alt="avatar"></a>
-                        <h4><a href="#" class="sidebar-name">Jackon Honson</a></h4>
-                        <a href="ad-post.html" class="btn btn-inline sidebar-btn">
+                        <a href="#" class="sidebar-avatar"><img src="<%= user.local.profileImg %>" alt="avatar"></a>
+                        <h4><a href="#" class="sidebar-name"><%= user.local.name %></a></h4>
+                        <a href="/ad-post" class="btn btn-inline sidebar-btn">
                             <i class="fas fa-plus-circle"></i>
                             <span>post your giv</span>
                         </a>
@@ -192,7 +196,7 @@
                                     </a>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
+                                    <a class="navbar-link" href="/chat">
                                         <span>Message</span>
                                         <span>0</span>
                                     </a>
@@ -203,7 +207,7 @@
                                         <span>0</span>
                                     </a>
                                 </li>
-                                <li class="navbar-item"><a class="navbar-link" href="user-form.html">Logout</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="/">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -227,7 +231,7 @@
             <div class="container">
                 <ul class="btmbar-widget">
                     <li>
-                        <a href="user-form.html">
+                        <a href="">
                             <i class="fas fa-user"></i>
                         </a>
                     </li>
@@ -238,7 +242,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="plus-btn" href="ad-post.html">
+                        <a class="plus-btn" href="/ad-post">
                             <i class="fas fa-plus"></i>
                             <span>Ad Your Post</span>
                         </a>
@@ -296,23 +300,26 @@
                         <div class="col-lg-5">
                             <div class="dash-header-left">
                                 <div class="dash-avatar">
-                                    <a href="#"><img src="images/avatar/01.jpg" alt="avatar"></a>
+                                    <a href="#"><img src="<%=user.local.profileImg%>" alt="avatar"></a>
                                 </div>
                                 <div class="dash-intro">
                                     <h4><a href="#"><%=user.local.name%></a></h4>
-                                    <h5>new seller</h5>
                                     <ul class="dash-meta">
                                         <li>
-                                            <i class="fas fa-phone-alt"></i>
-                                            <span>(123) 000-1234</span>
+                                            <i class="fas fa-medal"></i>
+                                            <span><%= user.local.rank%></span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-building"></i>
+                                            <span><%= user.local.company%></span>
                                         </li>
                                         <li>
                                             <i class="fas fa-envelope"></i>
-                                            <span><%=user.local.email%></span>
+                                            <span><%= user.local.email%></span>
                                         </li>
                                         <li>
                                             <i class="fas fa-map-marker-alt"></i>
-                                            <span>Los Angeles, West America</span>
+                                            <span><%= user.local.state %>, <%= user.local.city %></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -347,13 +354,13 @@
                         <div class="col-lg-12">
                             <div class="dash-menu-list">
                                 <ul>
-                                    <li><a href="dashboard.html">dashboard</a></li>
+                                    <li><a href="/feed">Home</a></li>
                                     <li><a href="/profile">Profile</a></li>
                                     <li><a class="active" href="/ad-post">Giv post</a></li>
                                     <li><a href="/my-ads">my Givs</a></li>
                                     <li><a href="/setting">settings</a></li>
                                     <li><a href="/bookmark">bookmarks</a></li>
-                                    <li><a href="#">message</a></li>
+                                    <li><a href="/chat">message</a></li>
                                     <li><a href="#">notification</a></li>
                                     <li><a href="/">logout</a></li>
                                 </ul>
@@ -414,7 +421,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">Item Tag (Optional)</label>
-                                            <input class="form-control custom-select" name="tag" type="text" placeholder="What kind of donation is it?">
+                                            <input class="form-control custom-select" name="tag" type="text" placeholder="What kind of item is it?">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4">
@@ -442,23 +449,35 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-lg-4" style="display: none;">
+                                    <div class="col-md-4 col-lg-3">
                                         <div class="form-group">
                                             <ul class="form-check-list">
                                                 <li>
-                                                    <label class="form-label">ad category</label>
+                                                    <label class="form-label">Item Rank</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" class="form-check" id="sale-check">
-                                                    <label for="sale-check" class="flat-badge sale">sale</label>
+                                                    <input type="radio" class="form-check" id="sale-check" value="Trivials" name="rank">
+                                                    <label for="sale-check" class="flat-badge sale">Trivials</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" class="form-check" id="rent-check">
-                                                    <label for="rent-check" class="flat-badge rent">rent</label>
+                                                    <input type="radio" class="form-check" id="rent-check" value="Essentials" name="rank">
+                                                    <label for="rent-check" class="flat-badge rent">Essentials</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" class="form-check" id="book-check">
-                                                    <label for="book-check" class="flat-badge booking">booking</label>
+                                                    <input type="radio" class="form-check" id="book-check" value="Devices" name="rank">
+                                                    <label for="book-check" class="flat-badge booking">Devices</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" class="form-check" id="book-check" value="Devices" name="rank">
+                                                    <label for="book-check" class="flat-badge Services">Services</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" class="form-check" id="book-check" value="Semi-Limited" name="rank">
+                                                    <label for="book-check" class="flat-badge semi">Semi-Limited</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" class="form-check" id="book-check" value="Limited" name="rank">
+                                                    <label for="book-check" class="flat-badge limi">Limited</label>
                                                 </li>
                                             </ul>
                                         </div>
@@ -480,7 +499,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-5">
                                         <div class="form-group">
                                             <label class="form-label">Item description</label>
                                             <textarea class="form-control" placeholder="Describe your message" name="desc"></textarea>
@@ -575,7 +594,7 @@
                                     </div>
                                     <p>Send me Trade Email/SMS Alerts for people looking to buy mobile handsets in www By clicking "Post", you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a> and acknowledge that you are the rightful owner of this item and using Trade to find a genuine buyer.</p>
                                 </div>
-                                <div class="form-group text-right">
+                                <div class="form-group text-center">
                                     <button class="btn btn-inline">
                                         <i class="fas fa-check-circle"></i>
                                         <span>Published your Giv!</span>
