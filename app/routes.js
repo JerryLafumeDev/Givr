@@ -189,7 +189,7 @@ module.exports = function(app, db, passport, ObjectId, upload) {
           sender: req.user.local.name,
           senderID: req.user._id,
           reciever: "unknown for now",
-          message: "trying to find",
+          message: req.body.message,
           timeSent: today.getHours() + ":" + today.getMinutes(),
           dateSent: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
         }, (err, result) => {
@@ -218,7 +218,7 @@ module.exports = function(app, db, passport, ObjectId, upload) {
           const size = profileImg.data.length;
           const extension = trail.extname(fileName);
           const allowedExt = /png|jpeg|jpg|gif|JPG/;
-
+          console.log(req.user)
           if(!allowedExt.test(extension)) throw "Unsupported file type!";
 
           const md5 = profileImg.md5;
@@ -233,7 +233,7 @@ module.exports = function(app, db, passport, ObjectId, upload) {
               message: err,
             })
           }
-            db.collection('users').findOneAndUpdate(
+            db.collection('users').insert(
               {
                 _id: ObjectId(req.user._id)
               },{
@@ -251,13 +251,13 @@ module.exports = function(app, db, passport, ObjectId, upload) {
                   birthday: req.body.birthday,
                   email : req.body.email,
                   password: req.user.local.password,
-                  profileImg: "/avis/" + req.files.profileImg.md5 + req.files.profileImg.size + trail.extname(req.files.profileImg.name),
-                  accountDate: req.user.accountDate
+                  profileImg: "/avis/" + req.files.profileImg.md5 + req.files.profileImg.size + trail.extname(req.files.profileImg.name)
                 },
                 __v: 0
               } 
             }, {
-              upsert: false
+              upsert: false,
+              returnOriginal: true
             }, 
                 (err, result) => {
                   if (err) return console.log(err)

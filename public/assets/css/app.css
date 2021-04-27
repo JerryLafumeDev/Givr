@@ -935,6 +935,7 @@ i.fas.fa-reply {
   -webkit-flex-direction: column;
   align-items: flex-start;
   -webkit-align-items: flex-start;
+  margin-right: 3px;
 }
 .chat .chat-body .messages .chats {
   max-width: 75%;
@@ -974,10 +975,13 @@ i.fas.fa-reply {
   vertical-align: 0px;
 }
 .chat .chat-body .messages .chats .message-content {
-  background-color: #fff;
+  background-color: #e91e63b3;
   border-radius: 35px;
   padding: 10px 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 8px 24px rgb(0 0 0 / 10%); */
+  color: white;
+  box-shadow: 0 0 6px #333;
+  width: fit-content;
 }
 .chat .chat-body .messages .chats.chats-right {
   margin-left: auto;

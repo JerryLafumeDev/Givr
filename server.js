@@ -92,6 +92,6 @@ io.on('connection', function(socket){
   console.log('client is connected' + socket.id)
 
   socket.on('userMessage', (data) => {
-    io.emit('userMessage', data)
+    socket.broadcast.emit('userMessage', data)
   })
 })

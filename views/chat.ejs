@@ -490,9 +490,10 @@
                     </div>
                 </div>
                 <div class="chat-footer chat-inp">
-                    <form action="/DM" method="POST">
+                    <form id="myForm" onsubmit="var elm = document.getElementsByClassName('input test-emoji')[0];
+                    elm.innerHTML= '';">
                         <div class="chat-input">
-                            <div class="input test-emoji" contenteditable="true" id="message" name="text" data-placeholder="Send Message.."></div>
+                            <div class="input test-emoji" placeholder="Send Message.." contenteditable="true" id="message" name="text" data-placeholder="Send Message.."></div>
                         </div>
                         <div class="form-buttons">
                             <button class="btn chat-input-tool" type="button" id="emoji-picker">

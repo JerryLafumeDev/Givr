@@ -180,6 +180,11 @@
   background: var(--booking);
 }
 
+.Services {
+  background: rgb(25, 216, 184);
+}
+
+
 .Semi-Limited {
   background: orange;
 }

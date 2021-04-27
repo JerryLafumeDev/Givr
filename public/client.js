@@ -7,9 +7,8 @@ let element = document.querySelector('div[contenteditable]');
 var observer = new MutationObserver(mutations =>
   mutations.forEach(mutation => {
     if(mutation.target.wholeText === undefined){
-      console.log(mutation.target.innerHTML)
         observer = mutation.target.innerHTML;
-    }else  console.log(mutation.target.wholeText); observer = mutation.target.wholeText;
+    }else observer = mutation.target.wholeText;
   })
 );
 
@@ -33,13 +32,15 @@ function getText() {
   }
 
 button.addEventListener('click', async function(){
+  var dad = document.querySelector('.chat-input'); 
+  dad.classList.remove('lined')
     const message = observer
-    appendMessage(`${message}`)
+    appendMessage(`${message}`) 
     socket.emit('userMessage', {
         message: observer
     })
     console.log(observer)
-    fetch('/clicked', {
+    fetch('/DM', {
       method: 'POST', 
       headers: {'Content-Type': 'application/json'}, 
       body: JSON.stringify({
@@ -61,7 +62,8 @@ button.addEventListener('click', async function(){
 
 
 socket.on('userMessage', (data) =>{
-    appendMessage(`${data.message}`) 
+  console.log(data)
+    sentMessage(`${data.message}`) 
 })
 
 socket.on('connection', function() {
@@ -77,10 +79,104 @@ socket.on('connect_timeout', function(err) {
 });
 
 function appendMessage(message){
+
+    var d = new Date();
+    var hour = d.getHours()
+    var min = d.getMinutes()
+    if( (""+min).length < 2)  min = "0"+ min
+    
+    var abbr = ""
+    if(hour > 12){
+      hour = hour - 12; 
+      abbr = " PM"
+    }else abbr = " AM" 
+    
+    
+    let currentTime = hour + ':' + min + abbr
+    
+    const chatsRight = document.createElement('div')
+    chatsRight.classList.add("chats", "chats-right")
+    const chatContent = document.createElement('div')
+    chatContent.classList.add("chat-content")
     const messageElement = document.createElement('div')
-    messageElement.innerText = message
-    output.appendChild(messageElement)
+    messageElement.classList.add("message-content")
+    const chatTime = document.createElement('div')
+    chatTime.classList.add("chat-time")
+    const rando = document.createElement('div')
+    const time = document.createElement('div')
+    time.classList.add("time")
+    const icon = document.createElement('i')
+    const check = document.createElement('img')
+    check.setAttribute("src", "/assets/img/double-tick.png")
+    
+    time.innerText = currentTime
+    messageElement.innerText = message  
+    
+
+    icon.appendChild(check)
+    time.appendChild(icon)
+    rando.appendChild(time)
+    chatTime.appendChild(rando)
+    chatContent.appendChild(messageElement)
+    chatContent.appendChild(chatTime)
+    chatsRight.appendChild(chatContent)
+    output.appendChild(chatsRight)
+}
+
+function sentMessage(message){
+
+    var d = new Date();
+    var hour = d.getHours()
+    var min = d.getMinutes()
+    if( (""+min).length < 2)  min = "0"+ min
+    
+    var abbr = ""
+    if(hour > 12){
+      hour = hour - 12; 
+      abbr = " PM"
+    }else abbr = " AM" 
+    
+    
+    let currentTime = hour + ':' + min + abbr
+    
+    const chatsLeft = document.createElement('div')
+    chatsLeft.classList.add("chats")
+
+    const chatsAvi = document.createElement('div')
+    chatsAvi.classList.add("chat-avatar")
+
+    const aviImg = document.createElement('img')
+    aviImg.classList.add("rounded-circle", "dreams_chat")
+    aviImg.setAttribute("src", "/assets/img/avatar-2.jpg")
+
+    const chatContent = document.createElement('div')
+    chatContent.classList.add("chat-content")
+
+    const messageElement = document.createElement('div')
+    messageElement.classList.add("message-content")
+
+    const chatTime = document.createElement('div')
+    chatTime.classList.add("chat-time")
+    const rando = document.createElement('div')
+    const time = document.createElement('div')
+    time.classList.add("time")
+    
+    time.innerText = currentTime
+    messageElement.innerText = message  
+    
+    rando.appendChild(time)
+    chatTime.appendChild(rando)
+    chatContent.appendChild(messageElement)
+    chatContent.appendChild(chatTime)
+    chatsAvi.appendChild(aviImg)
+    chatsLeft.appendChild(chatsAvi)
+    chatsLeft.appendChild(chatContent)
+    output.appendChild(chatsLeft)
 }
 
 console.log('Client-side code running');
+
+var form = document.getElementById("myForm");
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
 
