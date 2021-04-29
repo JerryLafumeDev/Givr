@@ -307,7 +307,7 @@
                                     <ul class="dash-meta">
                                         <li >
                                             <i class="fas fa-medal"></i>
-                                            <span><%= user.local.rank%></span>
+                                            <span><%= user.rank%></span>
                                         </li>
                                         <li >
                                             <i class="fas fa-building"></i>
@@ -327,15 +327,17 @@
                         </div>
                         <div class="col-lg-7">
                             <div class="dash-header-right">
-                                <div class="dash-focus dash-list">
+                                <h4 style="text-align: center;">Status</h4>
+                                <h5 style="margin-top: 20px;"><%= user.local.status %></h5>
+                                <div class="dash-focus dash-list" style="display: none;">
                                     <h2>2433</h2>
                                     <p>listing ads</p>
                                 </div>
-                                <div class="dash-focus dash-book">
+                                <div class="dash-focus dash-book" style="display: none;">
                                     <h2>2433</h2>
                                     <p>bookmark ads</p>
                                 </div>
-                                <div class="dash-focus dash-rev">
+                                <div class="dash-focus dash-rev" style="display: none;">
                                     <h2>2433</h2>
                                     <p>total review</p>
                                 </div>
@@ -356,8 +358,8 @@
                                 <ul>
                                     <li><a href="/feed">Home</a></li>
                                     <li><a class="active" href="/profile">Profile</a></li>
-                                    <li><a href="/ad-post">ad post</a></li>
-                                    <li><a href="/my-ads">my ads</a></li>
+                                    <li><a href="/ad-post">Giv post</a></li>
+                                    <li><a href="/my-ads">my Givs</a></li>
                                     <li><a href="/setting">settings</a></li>
                                     <li><a href="/bookmark">bookmarks</a></li>
                                     <li><a href="/chat">message</a></li>
@@ -388,9 +390,9 @@
                                 <a href="/setting"></a>
                             </div>
                             <ul class="account-card-list">
-                                <li><h5>Rank</h5><p><%= user.local.rank%></p></li>
-                                <li><h5>Joined</h5><p><%= user.local.accountDate%></p></li>
-                                <li><h5>Points</h5><p><%= user.local.points%></p></li>
+                                <li><h5>Rank</h5><p><%= user.rank%></p></li>
+                                <li><h5>Joined</h5><p><%= user.accountDate%></p></li>
+                                <li><h5>Points</h5><p><%= user.points%></p></li>
                                 <li><h5>Total Givs</h5><p>2</p></li>
                             </ul>
                         </div>

@@ -2,6 +2,7 @@ const socket = io();
 const handle = document.getElementById('handle')
 const output = document.getElementById('output')
 const button = document.getElementById('button')
+const chatInfo = document.querySelector('#small')
 
 let element = document.querySelector('div[contenteditable]');
 var observer = new MutationObserver(mutations =>
@@ -36,8 +37,10 @@ button.addEventListener('click', async function(){
   dad.classList.remove('lined')
     const message = observer
     appendMessage(`${message}`) 
-    socket.emit('userMessage', {
-        message: observer
+    console.log(chatInfo.dataset.roomId)
+    socket.emit('userMessage', chatInfo.dataset.roomId,{
+       message: observer
+        
     })
     console.log(observer)
     fetch('/DM', {
@@ -60,7 +63,6 @@ button.addEventListener('click', async function(){
   })
 
 
-
 socket.on('userMessage', (data) =>{
   console.log(data)
     sentMessage(`${data.message}`) 
@@ -77,6 +79,7 @@ socket.on('connect_error', function(err) {
 socket.on('connect_timeout', function(err) {
     console.log("client connect_timeout: ", err);
 });
+socket.emit('new user', chatInfo.dataset.roomId)
 
 function appendMessage(message){
 

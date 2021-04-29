@@ -128,8 +128,8 @@
                         <ul class="header-widget">
                             <li>
                                 <button class="header-favourite">
-                                    <i class="fas fa-heart"></i>
-                                    <sup>0</sup>
+                                    <i class="fas fa-bookmark"></i>
+                                  
                                 </button>
                             </li>
                             <li>
@@ -307,7 +307,7 @@
                                     <ul class="dash-meta">
                                         <li >
                                             <i class="fas fa-medal"></i>
-                                            <span><%= user.local.rank%></span>
+                                            <span><%= user.rank%></span>
                                         </li>
                                         <li >
                                             <i class="fas fa-building"></i>
@@ -326,7 +326,9 @@
                             </div>
                         </div>
                         <div class="col-lg-7">
-                            <div class="dash-header-right">
+                            <div class="dash-header-right" style="flex-direction: column;">
+                                <h4 style="text-align: center;">Status</h4>
+                                <h5 style="margin-top: 20px;"><%= user.local.status %></h5>
                                 <div class="dash-focus dash-list" style="display: none;">
                                     <h2>2433</h2>
                                     <p>listing ads</p>
@@ -356,10 +358,10 @@
                                 <ul>
                                     <li><a href="/dashboard">Home</a></li>
                                     <li><a href="/profile">Profile</a></li>
-                                    <li><a href="ad-post.html">ad post</a></li>
-                                    <li><a href="my-ads.html">my ads</a></li>
+                                    <li><a href="/ad-post">Giv post</a></li>
+                                    <li><a href="/my-ads">my Givs</a></li>
                                     <li><a class="active" href="/setting">settings</a></li>
-                                    <li><a href="bookmark.html">bookmarks</a></li>
+                                    <li><a href="/bookmark">bookmarks</a></li>
                                     <li><a href="/chat">message</a></li>
                                     <li><a href="#">notification</a></li>
                                     <li><a href="/">logout</a></li>
@@ -401,10 +403,16 @@
                                             <input type="text" class="form-control" placeholder="brian.mcgrivr@givrUSA.com" name="email">
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-label">Company</label>
-                                            <input type="text" class="form-control" placeholder="Classicads Advertising LID." name="company">
+                                            <input type="text" class="form-control" placeholder="Givr USA " name="company">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Status</label>
+                                            <input type="text" class="form-control" placeholder="" name="status">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">

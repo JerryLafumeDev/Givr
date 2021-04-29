@@ -58,16 +58,18 @@ module.exports = function(passport) {
                 var newUser            = new User();
 
                 // set the user's local credentials
+                newUser.room   = {}; 
+                newUser.name     = req.body.name;
                 newUser.local.name     = req.body.name;
                 newUser.local.email    = email;
                 newUser.local.password = newUser.generateHash(password); // use the generateHash function in our user model
                 newUser.local.profileImg   = "images/avatar/01.jpg";
-                newUser.local.accountDate = (new Date().getMonth()+1)+'-'+ new Date().getDate() + '-' + new Date().getFullYear();
+                newUser.accountDate = (new Date().getMonth()+1)+'-'+ new Date().getDate() + '-' + new Date().getFullYear();
                 newUser.local.company     = "Good Samaritan";                                                         
-                newUser.local.points      =  50;                                                      
+                newUser.points      =  50;                                                      
                 newUser.local.street      = "N/A";
                 newUser.local.status      = "New Donator At Givr, Welcome!, How about you set up a profile description?"; 
-                newUser.local.rank        = "New Giver"; 
+                newUser.rank        = "New Giver"; 
                 newUser.local.city        = "N/A"; 
                 newUser.local.state       = "N/A"; 
                 newUser.local.code        = "N/A"; 
@@ -75,6 +77,7 @@ module.exports = function(passport) {
                 newUser.local.website     = "N/A"; 
                 newUser.local.phone       = "N/A"; 
                 newUser.local.birthday    = "N/A"; 				
+                				
                 // save the user
                 newUser.save(function(err) {
                     if (err)

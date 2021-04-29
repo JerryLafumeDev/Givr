@@ -1,4 +1,4 @@
-module.exports = function(app, db, passport, ObjectId, upload) {
+module.exports = function(app, db, passport, ObjectId, upload, uId, moment) {
 
 
   /********************
@@ -40,11 +40,13 @@ module.exports = function(app, db, passport, ObjectId, upload) {
     =====render feed page=====
     **************************/
       app.get('/feed', isLoggedIn, (req, res) => {
+        var moment = require('moment');
         db.collection('posts').find().toArray((err, result) => {
           if(err) return console.log(err)
           res.render('feed.ejs' , {
             user: req.user,
-            posts: result
+            posts: result,
+            moment: require('moment')
           })
         })
       })
@@ -72,6 +74,41 @@ module.exports = function(app, db, passport, ObjectId, upload) {
           })
         })
       })
+    /**************************
+    =====generats chat ID =====
+    **************************/ 
+
+      app.post('/createRoom', isLoggedIn, async (req, res) => {
+        let roomId = uId.v4()
+        const person = req.body.name
+        
+        console.log(roomId)
+       await db.collection('users').findOneAndUpdate({
+           _id: ObjectId(req.user._id)
+        }, {
+          $set: {
+              room:{
+                 chat:  person+"|"+roomId,
+              }
+              
+          }
+        }, {upsert:true}
+        )
+       await db.collection('users').findOneAndUpdate({
+      
+            name: req.body.name
+          
+        },{
+          $set:{
+              room:{
+                chat:  req.user.name+"|"+roomId,
+             }
+            
+          }
+        }, {upsert:true}, (err, result) => (err)? res.send(err):res.redirect('chat')
+        )
+      })
+
     /**************************
     =====render settings page=====
     **************************/    
@@ -233,7 +270,7 @@ module.exports = function(app, db, passport, ObjectId, upload) {
               message: err,
             })
           }
-            db.collection('users').insert(
+            db.collection('users').findOneAndUpdate(
               {
                 _id: ObjectId(req.user._id)
               },{
@@ -241,12 +278,14 @@ module.exports = function(app, db, passport, ObjectId, upload) {
                 local: {
                   name :  req.body.name,
                   company: req.body.company,
+                  status: req.body.status,
                   street: req.body.street,
                   city: req.body.city,
                   state: req.body.state,
                   code: req.body.code,
                   country: req.body.country,
                   website: req.body.website,
+                  password: req.user.password,
                   phone: req.body.phone,
                   birthday: req.body.birthday,
                   email : req.body.email,
@@ -257,7 +296,6 @@ module.exports = function(app, db, passport, ObjectId, upload) {
               } 
             }, {
               upsert: false,
-              returnOriginal: true
             }, 
                 (err, result) => {
                   if (err) return console.log(err)
@@ -308,6 +346,9 @@ module.exports = function(app, db, passport, ObjectId, upload) {
             rank: req.body.rank,
             city: req.user.local.city,
             state: req.user.local.state,
+            date: new Date(),
+            published: (new Date().getMonth()+1)+'-'+ new Date().getDate() + '-' + new Date().getFullYear(),
+            fromNow: moment(new Date()).fromNow(),
             clicks: 0,
             bookmarks: 0
           })

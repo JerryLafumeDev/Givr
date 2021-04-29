@@ -77,7 +77,7 @@
                                 <a href="/profile" class="header-user">
                                     <i class="fas fa-user loggedin" style="color: rgb(255, 255, 255); background-color: rgb(219, 12, 98); height: 28px;
                                     font-size: 12px;"></i>
-                                    <span>Welcome, <%= user.local.name.split(" ", 1).join("") %> 😊</span>
+                                    <span>Welcome, <%= user.name.split(" ", 1).join("") %> 😊</span>
                                 </a>
                             </li>
                             <li>
@@ -178,7 +178,7 @@
                 <div class="sidebar-content">
                     <div class="sidebar-profile">
                         <a href="/profile" class="sidebar-avatar" style="background-image: url(<%= user.local.profileImg%>);"></a>
-                        <h3><a href="/profile" class="sidebar-name rank">New Giver</a></h3>
+                        <h3><a href="/profile" class="sidebar-name rank"><%= user.rank %></a></h3>
                         <h4><a href="/profile" class="sidebar-name"><%= user.local.name %></a></h4>                        
                         <h5><a href="/profile" class="sidebar-name points">﹢50</a></h4>                        
                         <a href="/ad-post" class="btn btn-inline sidebar-btn">
@@ -517,8 +517,8 @@
                                             });
                                         }, 1000000);</script>
                                     <ul class="product-location">
-                                        <li><i class="fas fa-map-marker-alt"></i><p><%= posts[i].city%>, <%= posts[i].state%></p></li>
-                                        <li style="margin-left: auto; margin-right: 0 !important;"><i class="fas fa-clock"></i><p>30 min ago</p></li>
+                                        <li><i class="fas fa-map-marker-alt"></i><p style="font-size: 12px;"><%= posts[i].city%>, <%= posts[i].state%></p></li>
+                                        <li style="margin-left: auto; margin-right: 0 !important;"><i class="fas fa-clock"></i><p style="font-size: 11px;"><%= moment(posts[i].date).fromNow() %></p></li>
                                     </ul>
                                 </div>
                                 <div class="product-details">

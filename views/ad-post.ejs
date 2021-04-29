@@ -307,7 +307,7 @@
                                     <ul class="dash-meta">
                                         <li>
                                             <i class="fas fa-medal"></i>
-                                            <span><%= user.local.rank%></span>
+                                            <span><%= user.rank%></span>
                                         </li>
                                         <li>
                                             <i class="fas fa-building"></i>
@@ -326,7 +326,9 @@
                             </div>
                         </div>
                         <div class="col-lg-7">
-                            <div class="dash-header-right">
+                            <div class="dash-header-right" style="flex-direction: column;">
+                                    <h4 style="text-align: center;">Status</h4>
+                                    <h5 style="margin-top: 20px;"><%= user.local.status %></h5>
                                 <div class="dash-focus dash-list">
                                     <h2>2433</h2>
                                     <p>listing ads</p>
@@ -468,7 +470,7 @@
                                                     <label for="book-check" class="flat-badge booking">Devices</label>
                                                 </li>
                                                 <li>
-                                                    <input type="radio" class="form-check" id="book-check" value="Devices" name="rank">
+                                                    <input type="radio" class="form-check" id="book-check" value="Services" name="rank">
                                                     <label for="book-check" class="flat-badge Services">Services</label>
                                                 </li>
                                                 <li>

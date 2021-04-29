@@ -184,9 +184,20 @@
   left: 0px;
   width: 100%;
   height: 100%;
+  background: linear-gradient( 
+    45deg
+     , #e7717d78, #f9b2947a,#e7717d81, #f9b2947c );  z-index: -1;
+}
+.single-banner::after {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(4, 53, 138, 0.65)), to(rgba(5, 44, 112, 0.65)));
-  background: linear-gradient(rgba(4, 53, 138, 0.65), rgba(5, 44, 112, 0.65));
-  z-index: -1;
+  background: linear-gradient( #000000dc, transparent);
+  z-index: -2;
 }
 
 .single-content {

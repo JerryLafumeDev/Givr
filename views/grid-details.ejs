@@ -581,7 +581,7 @@
                                         </div>
                                         <div class="author-intro">
                                             <h4><a href="#"><%= item.authorName %></a></h4>
-                                            <h5><%=people[0].local.rank%></h5>
+                                            <h5><%=people[0].rank%></h5>
                                             <p><%=people[0].local.status%></p>
                                         </div>
                                         <ul class="author-widget">
@@ -596,7 +596,7 @@
                                             <li><h6>Points</h6><p>56</p></li>
                                         </ul>
                                         <div class="author-details">
-                                            <h6>joined: <%=people[0].local.accountDate%></h6>
+                                            <h6>joined: <%=people[0].accountDate%></h6>
                                             <h6>Area: <%=people[0].local.city%>, <%=people[0].local.state%></h6>
                                         </div>
                                     </div>
@@ -624,7 +624,7 @@
                                             </li>
                                             <li>
                                                 <h6>Published:</h6>
-                                                <p>N/A</p>
+                                                <p><%= item.published %></p>
                                             </li>
                                             <li>
                                                 <h6>Condition:</h6>
@@ -648,15 +648,15 @@
                                         <ul>
                                             <li>
                                                 <i class="fas fa-dot-circle"></i>
-                                                <p>Check the item before you buy</p>
+                                                <p>Check the item before you bring it home.</p>
                                             </li>
                                             <li>
                                                 <i class="fas fa-dot-circle"></i>
-                                                <p>Pay only after collecting item</p>
+                                                <p>Don't meet in secluded places.</p>
                                             </li>
                                             <li>
                                                 <i class="fas fa-dot-circle"></i>
-                                                <p>Beware of unrealistic offers</p>
+                                                <p>Beware of exchanging important information</p>
                                             </li>
                                         </ul>
                                     </div>

@@ -31,13 +31,15 @@ var flash    = require('connect-flash');
 // var uniqid  = require('uniqid')
 var ObjectId = require('mongodb').ObjectID
 var morgan       = require('morgan');
-var bodyParser   = require('body-parser')
+
 var session      = require('express-session');
 var baffle = require('baffle');
+var uId = require('uuid');
 
 const DB_NAME = process.env.DB_NAME
 const DB_URL =process.env.DB_URL+`/${DB_NAME}`
 const PORT = process.env.PORT || 9999
+const moment = require('moment')
 // const { Server } = require('mongodb')
 // console.log(`*********URL : ${DB_URL}`)
 var db
@@ -49,7 +51,8 @@ var db
 mongoose.connect(DB_URL, (err, database) => {
   if (err) return console.log(err)
   db = database
-  require('./app/routes.js')(app, db, passport, ObjectId, upload);
+
+  require('./app/routes.js')(app, db, passport, ObjectId, upload, uId, moment);
 });
 
 require('./config/passport')(passport); // pass passport for configuration
@@ -64,8 +67,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(fileUpload())
 app.use('/uploads' ,express.static('uploads'))
 app.use(morgan('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 /******************************
@@ -91,7 +94,19 @@ console.log('Your project is on port ' + PORT);
 io.on('connection', function(socket){
   console.log('client is connected' + socket.id)
 
-  socket.on('userMessage', (data) => {
-    socket.broadcast.emit('userMessage', data)
+  // socket.on('userMessage', (data) => {
+  //   socket.broadcast.emit('userMessage', data)
+  // })
+  socket.on('new user', (room) => {
+    socket.join(room)
+  });
+  //make the message emmit to everyone
+    socket.on('userMessage', (room,msg) => {
+      console.log(room,msg)
+      socket.to(room).emit('userMessage', msg);
+    });
+  // send message on disconnect
+  socket.on('disconnect', () => {
+    socket.emit('a user has disconnected')
   })
 })
